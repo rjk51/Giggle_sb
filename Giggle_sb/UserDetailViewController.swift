@@ -16,6 +16,8 @@ class UserDetailViewController: UIViewController {
     }
     
 
+    @IBAction func date_of_birth(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
