@@ -8,12 +8,19 @@
 
 import Foundation
 
+// MARK: - UserReg
+struct UserReg: Codable {
+    let email: String
+    let password: String
+}
+
 // MARK: - User
 struct User: Codable {
     let id: String
     let displayName: String
     let role: String
     let email: String
+    let password: String
     let phoneNumber: String
     let location: String
     let skills: [String]
