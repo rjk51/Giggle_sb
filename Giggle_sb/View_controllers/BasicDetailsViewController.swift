@@ -16,37 +16,27 @@ class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var nextButton: UIButton!
     
     private let datePicker = UIDatePicker()
-    private let genderPicker = UIPickerView() // Picker for gender
-    private let genders = ["Male", "Female", "Other"] // Gender options
+    private let genderPicker = UIPickerView()
+    private let genders = ["Male", "Female", "Other"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupDatePicker()
         setupGenderPicker()
     }
     
     private func setupDatePicker() {
-        // Set the date picker mode to date
         datePicker.datePickerMode = .date
-        
-        // Add target for date selection
         datePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-        
-        // Set the date picker as the input view for the dateTextField
         dateTextField.inputView = datePicker
-        
         datePicker.preferredDatePickerStyle = .wheels
-        
-        // Optional: Add a toolbar with a done button
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: false)
         
-        // Set the toolbar as the input accessory view
         dateTextField.inputAccessoryView = toolbar
     }
     
@@ -55,7 +45,6 @@ class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPick
         genderPicker.dataSource = self
         genderTextField.inputView = genderPicker
         
-        // Add toolbar for gender picker
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressedGender))
@@ -64,9 +53,8 @@ class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
 
     @objc private func dateChanged(_ sender: UIDatePicker) {
-        // Format the date to a string and set it to the dateTextField
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium // You can customize the date style
+        dateFormatter.dateStyle = .medium
         dateTextField.text = dateFormatter.string(from: sender.date)
     }
 
@@ -82,21 +70,21 @@ class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPick
     // MARK: - UIPickerView Data Source
 
     @objc(numberOfComponentsInPickerView:) func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1 // One column for gender selection
+        return 1
     }
 
     @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return genders.count // Number of options
+        return genders.count
     }
 
     // MARK: - UIPickerView Delegate
 
     @objc func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genders[row] // Provide the option title
+        return genders[row]
     }
 
     @objc func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        genderTextField.text = genders[row] // Update the text field with the selected gender
+        genderTextField.text = genders[row]
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {

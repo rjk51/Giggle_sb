@@ -17,25 +17,20 @@ class LocationDetailsViewController: UIViewController, CLLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        // Set up location manager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     @IBAction func pickLocationButtonTapped(_ sender: UIButton) {
-        // Request location permissions
         checkLocationPermissions()
     }
     
     private func checkLocationPermissions() {
-        // Check the authorization status
         switch locationManager.authorizationStatus {
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization() // Request permission
+            locationManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse, .authorizedAlways:
             fetchLocationOnce()
         case .denied, .restricted:
-            // Handle case where permission is denied
             showLocationDeniedAlert()
         @unknown default:
             break
@@ -51,26 +46,21 @@ class LocationDetailsViewController: UIViewController, CLLocationManagerDelegate
     }
     
     private func fetchLocationOnce() {
-        // Start updating location to get current location
         locationManager.requestLocation()
     }
     
     // MARK: - CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // Get the user's current location
         if let location = locations.last {
             currentLocation = location
             print("Current location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
-            
-            // Store the location or use it as needed
             storeUserLocation(location)
             performSegue(withIdentifier: "goToEducationDetailsScreen", sender: self)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // Check if permission was granted and fetch location if so
         if status == .authorizedWhenInUse || status == .authorizedAlways {
             fetchLocationOnce()
         }
@@ -81,12 +71,10 @@ class LocationDetailsViewController: UIViewController, CLLocationManagerDelegate
     }
     
     private func storeUserLocation(_ location: CLLocation) {
-        // Here you can save the location to your database or use it as needed
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
         print("Stored location: Latitude: \(latitude), Longitude: \(longitude)")
         
-        // Example: Store in UserDefaults (replace this with your preferred storage method)
         UserDefaults.standard.set(latitude, forKey: "userLatitude")
         UserDefaults.standard.set(longitude, forKey: "userLongitude")
     }

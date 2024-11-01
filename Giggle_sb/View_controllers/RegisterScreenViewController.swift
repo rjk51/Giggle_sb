@@ -24,14 +24,12 @@ class RegisterScreenViewController: UIViewController {
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
-        // Retrieve user input from text fields
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
             displayAlert(message: "Please enter both email and password.")
             return
         }
         
-        // Attempt to register the user
         let registrationSuccess = userManager.registerUser(email: email, password: password)
         
         if registrationSuccess {
@@ -44,9 +42,8 @@ class RegisterScreenViewController: UIViewController {
     }
     
     @IBAction func togglePasswordVisibility(_ sender: UIButton) {
-        passwordTextField.isSecureTextEntry.toggle() // Toggle the secure text entry
-            
-        // Change the button's image based on the visibility state
+        passwordTextField.isSecureTextEntry.toggle()
+
         let buttonImage = passwordTextField.isSecureTextEntry ? "eye.slash.fill" : "eye.fill"
         sender.setImage(UIImage(systemName: buttonImage), for: .normal)
 
