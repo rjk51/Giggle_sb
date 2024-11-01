@@ -1,13 +1,13 @@
 //
-//  UserDetailViewController.swift
+//  EducationDetailsViewController.swift
 //  Giggle_sb
 //
-//  Created by user@91 on 29/10/24.
+//  Created by rjk on 30/10/24.
 //
 
 import UIKit
 
-class UserDetailViewController: UIViewController {
+class EducationDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,8 +16,6 @@ class UserDetailViewController: UIViewController {
     }
     
 
-    @IBAction func date_of_birth(_ sender: Any) {
-    }
     /*
     // MARK: - Navigation
 
