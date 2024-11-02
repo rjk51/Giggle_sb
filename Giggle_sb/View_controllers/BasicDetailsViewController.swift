@@ -1,13 +1,6 @@
-//
-//  BasicDetailsViewController.swift
-//  Giggle_sb
-//
-//  Created by rjk on 01/11/24.
-//
-
 import UIKit
 
-class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class BasicDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
@@ -16,14 +9,18 @@ class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var nextButton: UIButton!
     
     private let datePicker = UIDatePicker()
-    private let genderPicker = UIPickerView()
     private let genders = ["Male", "Female", "Other"]
-    
+    private var dropdownTableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupDatePicker()
-        setupGenderPicker()
+        setupGenderDropdown()
+        
+        // Add a tap gesture to dismiss the dropdown when tapping outside
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissDropdown))
+        view.addGestureRecognizer(tapGesture)
     }
     
     private func setupDatePicker() {
@@ -40,18 +37,36 @@ class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPick
         dateTextField.inputAccessoryView = toolbar
     }
     
-    private func setupGenderPicker() {
-        genderPicker.delegate = self
-        genderPicker.dataSource = self
-        genderTextField.inputView = genderPicker
+    private func setupGenderDropdown() {
+        // Create and configure the dropdown table view
+        dropdownTableView = UITableView()
+        dropdownTableView.delegate = self
+        dropdownTableView.dataSource = self
+        dropdownTableView.isHidden = true
+        dropdownTableView.layer.borderWidth = 1
+        dropdownTableView.layer.borderColor = UIColor.lightGray.cgColor
+        dropdownTableView.layer.cornerRadius = 5
         
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressedGender))
-        toolbar.setItems([doneButton], animated: false)
-        genderTextField.inputAccessoryView = toolbar
+        // Register a basic cell type
+        dropdownTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        // Add the table view to the main view
+        view.addSubview(dropdownTableView)
+        
+        // Set constraints for the dropdown table to appear below the genderTextField
+        dropdownTableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            dropdownTableView.topAnchor.constraint(equalTo: genderTextField.bottomAnchor, constant: 5),
+            dropdownTableView.leadingAnchor.constraint(equalTo: genderTextField.leadingAnchor),
+            dropdownTableView.trailingAnchor.constraint(equalTo: genderTextField.trailingAnchor),
+            dropdownTableView.heightAnchor.constraint(equalToConstant: CGFloat(genders.count * 44))  // 44 is the standard cell height
+        ])
+        
+        // Add tap gesture recognizer to the genderTextField
+        let genderTapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleDropdown))
+        genderTextField.addGestureRecognizer(genderTapGesture)
     }
-
+    
     @objc private func dateChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -59,46 +74,40 @@ class BasicDetailsViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
 
     @objc private func donePressed() {
-        // Dismiss the date picker
         dateTextField.resignFirstResponder()
     }
     
-    @objc private func donePressedGender() {
-        genderTextField.resignFirstResponder()
-    }
-    
-    // MARK: - UIPickerView Data Source
-
-    @objc(numberOfComponentsInPickerView:) func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+    @objc private func toggleDropdown() {
+        // Show or hide the dropdown
+        dropdownTableView.isHidden.toggle()
     }
 
-    @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    @objc private func dismissDropdown() {
+        // Dismiss the dropdown when tapping outside
+        dropdownTableView.isHidden = true
+    }
+
+    // MARK: - UITableView Data Source
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return genders.count
     }
 
-    // MARK: - UIPickerView Delegate
-
-    @objc func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genders[row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = genders[indexPath.row]
+        return cell
     }
 
-    @objc func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        genderTextField.text = genders[row]
+    // MARK: - UITableView Delegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Set the selected gender in the genderTextField and hide the dropdown
+        genderTextField.text = genders[indexPath.row]
+        dropdownTableView.isHidden = true
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToLocationDetailsScreen", sender: self)
     }
-    
-    /*
-    // MARK: - Navigation
-     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
