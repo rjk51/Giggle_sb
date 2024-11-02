@@ -1,21 +1,14 @@
 //
-//  EducationDetailsViewController.swift
+//  SkillsViewController.swift
 //  Giggle_sb
 //
-//  Created by rjk on 30/10/24.
+//  Created by rjk on 02/11/24.
 //
 
 import UIKit
 
-class EducationDetailsViewController: UIViewController {
+class SkillsViewController: UIViewController {
 
-    @IBOutlet weak var yesButton: UIButton!
-    @IBOutlet weak var noButton: UIButton!
-    @IBOutlet weak var degreeTextField: UITextField!
-    @IBOutlet weak var specializationTextField: UITextField!
-    @IBOutlet weak var yearTextField: UITextField!
-    @IBOutlet weak var universityNameTextField: UITextField!
-    @IBOutlet weak var nextButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
