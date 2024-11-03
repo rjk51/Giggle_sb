@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1170,6 +1169,9 @@ your current city or nearby cities.</string>
                                                 <color key="tintColor" white="0.40470875849999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Yes" cornerStyle="capsule"/>
+                                                <connections>
+                                                    <action selector="yesButtonTapped:" destination="3R4-37-alZ" eventType="touchUpInside" id="K2h-2N-hIa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYP-aw-1bX">
                                                 <rect key="frame" x="128" y="153.33333333333334" width="76" height="35"/>
@@ -1179,31 +1181,24 @@ your current city or nearby cities.</string>
                                                 <color key="tintColor" white="0.40470875849999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="No" cornerStyle="capsule"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiQ-Go-X4Z">
-                                                <rect key="frame" x="20" y="244.33333333333337" width="41" height="30"/>
-                                                <menu key="menu" id="IkM-dL-uch">
-                                                    <children>
-                                                        <command title="Item 1" id="D3G-Hl-Knz"/>
-                                                        <command title="Item 2" id="hqd-IF-EQa"/>
-                                                    </children>
-                                                </menu>
-                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="noButtonTapped:" destination="3R4-37-alZ" eventType="touchUpInside" id="IIx-ZP-sVf"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI3-2n-R6a">
-                                                <rect key="frame" x="20" y="294.33333333333331" width="57" height="20"/>
+                                                <rect key="frame" x="20" y="298.33333333333331" width="57" height="20"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specialization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5P-Rv-SCV">
-                                                <rect key="frame" x="20" y="384.33333333333331" width="109" height="20"/>
+                                                <rect key="frame" x="20" y="388.33333333333331" width="109" height="20"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5v-wP-40m">
-                                                <rect key="frame" x="20" y="324.33333333333331" width="362" height="40"/>
+                                                <rect key="frame" x="20" y="328.33333333333331" width="362" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="sZF-ov-gv4"/>
                                                 </constraints>
@@ -1214,7 +1209,7 @@ your current city or nearby cities.</string>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiD-Ge-BLc">
-                                                <rect key="frame" x="20" y="416.33333333333331" width="362" height="40"/>
+                                                <rect key="frame" x="20" y="420.33333333333331" width="362" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="iIq-t2-vTw"/>
                                                 </constraints>
@@ -1225,13 +1220,13 @@ your current city or nearby cities.</string>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCo-RY-GxD">
-                                                <rect key="frame" x="20" y="476.33333333333331" width="128" height="20"/>
+                                                <rect key="frame" x="20" y="480.33333333333331" width="128" height="20"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O4r-Yv-XTk">
-                                                <rect key="frame" x="20" y="508.33333333333326" width="362" height="40"/>
+                                                <rect key="frame" x="20" y="512.33333333333337" width="362" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="2ta-0K-RI9"/>
                                                 </constraints>
@@ -1242,13 +1237,13 @@ your current city or nearby cities.</string>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN7-yN-Z2M">
-                                                <rect key="frame" x="20" y="568.33333333333337" width="128" height="20"/>
+                                                <rect key="frame" x="20" y="572.33333333333337" width="128" height="20"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyJ-90-OfF">
-                                                <rect key="frame" x="46" y="720.33333333333337" width="310" height="50"/>
+                                                <rect key="frame" x="46" y="724.33333333333337" width="310" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="NkL-Hp-ok2"/>
                                                 </constraints>
@@ -1257,9 +1252,12 @@ your current city or nearby cities.</string>
                                                 <buttonConfiguration key="configuration" style="filled" title="NEXT">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="nextButtonTapped:" destination="3R4-37-alZ" eventType="touchUpInside" id="92x-1g-oT4"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIo-AW-VSo">
-                                                <rect key="frame" x="20" y="600.33333333333337" width="362" height="40"/>
+                                                <rect key="frame" x="20" y="604.33333333333337" width="362" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="LIW-0n-Oc4"/>
                                                 </constraints>
@@ -1269,10 +1267,20 @@ your current city or nearby cities.</string>
                                                     <action selector="date_of_birth:" destination="Apv-f3-Hue" eventType="editingDidEnd" id="FBd-Fg-W9m"/>
                                                 </connections>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EsC-hu-lX2">
+                                                <rect key="frame" x="20" y="238.33333333333337" width="362" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="lgk-yp-tw2"/>
+                                                </constraints>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="date_of_birth:" destination="Apv-f3-Hue" eventType="editingDidEnd" id="PwM-yr-afE"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="YiQ-Go-X4Z" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="20" id="0Re-Ge-fcr"/>
                                             <constraint firstItem="eyJ-90-OfF" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="46" id="7Kg-c0-KD8"/>
                                             <constraint firstItem="yCo-RY-GxD" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="20" id="AK5-vC-nJd"/>
                                             <constraint firstAttribute="trailing" secondItem="F5v-wP-40m" secondAttribute="trailing" constant="20" id="CSh-0G-wcU"/>
@@ -1286,9 +1294,11 @@ your current city or nearby cities.</string>
                                             <constraint firstItem="Yam-Qi-Mgu" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="20" id="J8F-ng-SWn"/>
                                             <constraint firstItem="F5v-wP-40m" firstAttribute="top" secondItem="SI3-2n-R6a" secondAttribute="bottom" constant="10" id="KaW-2m-1ln"/>
                                             <constraint firstItem="O5P-Rv-SCV" firstAttribute="top" secondItem="F5v-wP-40m" secondAttribute="bottom" constant="20" id="LAJ-zc-Ptv"/>
-                                            <constraint firstItem="YiQ-Go-X4Z" firstAttribute="top" secondItem="JTM-03-gMi" secondAttribute="bottom" constant="16" id="Nfl-7q-lBQ"/>
                                             <constraint firstItem="RWX-GL-iND" firstAttribute="top" secondItem="6ui-j5-k4x" secondAttribute="top" constant="30" id="Nty-Y1-gb7"/>
+                                            <constraint firstItem="EsC-hu-lX2" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="20" id="Rc3-fE-ZCR"/>
                                             <constraint firstAttribute="trailing" secondItem="EiD-Ge-BLc" secondAttribute="trailing" constant="20" id="TG8-ky-vIw"/>
+                                            <constraint firstItem="SI3-2n-R6a" firstAttribute="top" secondItem="EsC-hu-lX2" secondAttribute="bottom" constant="20" id="VOS-HF-TA1"/>
+                                            <constraint firstItem="EsC-hu-lX2" firstAttribute="top" secondItem="JTM-03-gMi" secondAttribute="bottom" constant="10" id="Z4c-fG-hKJ"/>
                                             <constraint firstItem="yqi-Xa-Tjs" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="20" id="adD-BI-vdb"/>
                                             <constraint firstItem="O4r-Yv-XTk" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="20" id="ath-d2-mhS"/>
                                             <constraint firstItem="RWX-GL-iND" firstAttribute="leading" secondItem="Yam-Qi-Mgu" secondAttribute="trailing" constant="7" id="bWO-yg-Rqt"/>
@@ -1308,10 +1318,10 @@ your current city or nearby cities.</string>
                                             <constraint firstAttribute="trailing" secondItem="yqi-Xa-Tjs" secondAttribute="trailing" constant="20" id="omh-gh-oMS"/>
                                             <constraint firstItem="eyJ-90-OfF" firstAttribute="top" secondItem="QIo-AW-VSo" secondAttribute="bottom" constant="80" id="qew-zu-tpL"/>
                                             <constraint firstItem="F5v-wP-40m" firstAttribute="leading" secondItem="6ui-j5-k4x" secondAttribute="leading" constant="20" id="riH-4V-HTH"/>
-                                            <constraint firstItem="SI3-2n-R6a" firstAttribute="top" secondItem="YiQ-Go-X4Z" secondAttribute="bottom" constant="20" id="uCh-1E-KWW"/>
                                             <constraint firstItem="O4r-Yv-XTk" firstAttribute="top" secondItem="yCo-RY-GxD" secondAttribute="bottom" constant="12" id="uix-y7-SEE"/>
                                             <constraint firstItem="QIo-AW-VSo" firstAttribute="top" secondItem="TN7-yN-Z2M" secondAttribute="bottom" constant="12" id="v1S-90-7jD"/>
                                             <constraint firstItem="s9e-Lx-I0O" firstAttribute="top" secondItem="A4A-Xr-JN2" secondAttribute="bottom" constant="16" id="woe-dt-ZCc"/>
+                                            <constraint firstAttribute="trailing" secondItem="EsC-hu-lX2" secondAttribute="trailing" constant="20" id="xZd-cM-9Er"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1336,14 +1346,20 @@ your current city or nearby cities.</string>
                     </view>
                     <navigationItem key="navigationItem" id="0mj-Hp-tcq"/>
                     <connections>
+                        <outlet property="completionYearLabel" destination="yCo-RY-GxD" id="L1g-Hn-4bl"/>
+                        <outlet property="currentlyPursuingLabel" destination="JTM-03-gMi" id="q7Q-VZ-jlH"/>
+                        <outlet property="currentlyPursuingTextField" destination="EsC-hu-lX2" id="FKG-fx-W4D"/>
+                        <outlet property="degreeLabel" destination="SI3-2n-R6a" id="Upc-hu-scM"/>
                         <outlet property="degreeTextField" destination="F5v-wP-40m" id="6V1-tb-lHH"/>
                         <outlet property="nextButton" destination="eyJ-90-OfF" id="3Az-yM-j0k"/>
                         <outlet property="noButton" destination="NYP-aw-1bX" id="wUV-Lh-ouc"/>
+                        <outlet property="specializationLabel" destination="O5P-Rv-SCV" id="yMI-Qx-v9Q"/>
                         <outlet property="specializationTextField" destination="EiD-Ge-BLc" id="5ak-te-WAZ"/>
+                        <outlet property="universityNameLabel" destination="TN7-yN-Z2M" id="gEo-GQ-cXZ"/>
                         <outlet property="universityNameTextField" destination="QIo-AW-VSo" id="eib-Qx-byk"/>
                         <outlet property="yearTextField" destination="O4r-Yv-XTk" id="X2B-J7-6lC"/>
                         <outlet property="yesButton" destination="s9e-Lx-I0O" id="9o7-FN-m4e"/>
-                        <segue destination="35V-mk-gRr" kind="show" id="g6g-On-Ii1"/>
+                        <segue destination="35V-mk-gRr" kind="show" identifier="goToSkillsScreen" id="g6g-On-Ii1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwy-HW-CJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1376,7 +1392,7 @@ your current city or nearby cities.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n9Y-rR-dnR">
-                                                <rect key="frame" x="20" y="354" width="362" height="199"/>
+                                                <rect key="frame" x="20" y="379" width="362" height="199"/>
                                                 <color key="backgroundColor" red="0.18039217590000001" green="0.18039217590000001" blue="0.18039217590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="199" id="1s1-vT-kTA"/>
@@ -1402,7 +1418,7 @@ your current city or nearby cities.</string>
                                                 </cells>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEo-TJ-J9h">
-                                                <rect key="frame" x="46" y="743" width="310" height="50"/>
+                                                <rect key="frame" x="46" y="768" width="310" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Ggo-Mi-ffE"/>
                                                 </constraints>
@@ -1413,7 +1429,7 @@ your current city or nearby cities.</string>
                                                 </buttonConfiguration>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gY-OL-d5p">
-                                                <rect key="frame" x="20" y="304" width="130" height="20"/>
+                                                <rect key="frame" x="20" y="329" width="130" height="20"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1430,34 +1446,44 @@ your current city or nearby cities.</string>
                                                 <color key="textColor" red="0.83137255909999996" green="0.28627452250000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctK-cP-loz">
-                                                <rect key="frame" x="20" y="174" width="362" height="90"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhF-Wx-JPZ">
+                                                <rect key="frame" x="20" y="174" width="362" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="BEB-Tu-JH7"/>
+                                                    <constraint firstAttribute="height" constant="45" id="6Fw-Sz-aua"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqG-xB-9jS">
+                                                <rect key="frame" x="20" y="227" width="362" height="82"/>
+                                                <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="750" constant="82" id="ccE-KU-hct"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="ctK-cP-loz" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="1PU-nd-TiX"/>
+                                            <constraint firstAttribute="trailing" secondItem="dhF-Wx-JPZ" secondAttribute="trailing" constant="20" id="1LC-zZ-9cl"/>
                                             <constraint firstAttribute="trailing" secondItem="SEo-TJ-J9h" secondAttribute="trailing" constant="46" id="6eS-N7-O23"/>
                                             <constraint firstItem="SEo-TJ-J9h" firstAttribute="top" secondItem="n9Y-rR-dnR" secondAttribute="bottom" constant="190" id="8Ha-Uo-Cnw"/>
                                             <constraint firstItem="iw2-u8-44R" firstAttribute="top" secondItem="QIh-Ly-BTE" secondAttribute="bottom" constant="20" id="9PS-Ux-M0p"/>
                                             <constraint firstItem="HlZ-mb-eTO" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="9Zs-Hq-ISm"/>
                                             <constraint firstItem="aDq-e4-YYr" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="EAI-9j-imv"/>
+                                            <constraint firstItem="dhF-Wx-JPZ" firstAttribute="top" secondItem="HlZ-mb-eTO" secondAttribute="bottom" constant="16" id="Fwd-Be-Ujq"/>
                                             <constraint firstItem="4gY-OL-d5p" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="HgX-hW-hOc"/>
-                                            <constraint firstItem="4gY-OL-d5p" firstAttribute="top" secondItem="ctK-cP-loz" secondAttribute="bottom" constant="40" id="P7w-YP-arc"/>
                                             <constraint firstItem="aDq-e4-YYr" firstAttribute="top" secondItem="iw2-u8-44R" secondAttribute="bottom" constant="30" id="S4h-nq-3oF"/>
                                             <constraint firstAttribute="trailing" secondItem="iw2-u8-44R" secondAttribute="trailing" constant="20" id="SEK-Mc-hBk"/>
-                                            <constraint firstItem="ctK-cP-loz" firstAttribute="top" secondItem="HlZ-mb-eTO" secondAttribute="bottom" constant="16" id="SIc-Yd-1Sz"/>
                                             <constraint firstItem="SEo-TJ-J9h" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="46" id="Tli-1I-FNt"/>
+                                            <constraint firstAttribute="trailing" secondItem="QqG-xB-9jS" secondAttribute="trailing" constant="20" id="atN-ML-tM9"/>
+                                            <constraint firstItem="4gY-OL-d5p" firstAttribute="top" secondItem="QqG-xB-9jS" secondAttribute="bottom" constant="20" id="b8P-hc-87A"/>
                                             <constraint firstItem="n9Y-rR-dnR" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="bC3-vd-rgq"/>
+                                            <constraint firstItem="QqG-xB-9jS" firstAttribute="top" secondItem="dhF-Wx-JPZ" secondAttribute="bottom" constant="8" id="caF-EJ-9kA"/>
                                             <constraint firstItem="HlZ-mb-eTO" firstAttribute="top" secondItem="aDq-e4-YYr" secondAttribute="bottom" constant="1.5" id="dEh-Vd-bJn"/>
                                             <constraint firstItem="QIh-Ly-BTE" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="dPE-wX-gWr"/>
-                                            <constraint firstAttribute="trailing" secondItem="ctK-cP-loz" secondAttribute="trailing" constant="20" id="gWf-Rz-VvV"/>
+                                            <constraint firstItem="dhF-Wx-JPZ" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="ezB-Qs-i4w"/>
                                             <constraint firstItem="n9Y-rR-dnR" firstAttribute="top" secondItem="4gY-OL-d5p" secondAttribute="bottom" constant="30" id="iqV-Qz-xTV"/>
+                                            <constraint firstItem="QqG-xB-9jS" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="lMY-Dy-i0J"/>
                                             <constraint firstItem="iw2-u8-44R" firstAttribute="leading" secondItem="6cR-Sg-LOa" secondAttribute="leading" constant="20" id="pFQ-9Q-dic"/>
                                             <constraint firstAttribute="trailing" secondItem="n9Y-rR-dnR" secondAttribute="trailing" constant="20" id="rea-hc-Gmo"/>
                                             <constraint firstItem="QIh-Ly-BTE" firstAttribute="top" secondItem="6cR-Sg-LOa" secondAttribute="top" constant="30" id="riq-XM-yOT"/>
@@ -1484,10 +1510,15 @@ your current city or nearby cities.</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hhn-Os-RDh"/>
+                    <connections>
+                        <outlet property="chipsContainerView" destination="QqG-xB-9jS" id="d1H-6W-qJj"/>
+                        <outlet property="skillsTextField" destination="dhF-Wx-JPZ" id="yhO-bI-pe3"/>
+                        <outlet property="suggestCollectionView" destination="n9Y-rR-dnR" id="b3j-1b-XSH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4z-wh-oud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5804" y="3"/>
+            <point key="canvasLocation" x="5802.9850746268658" y="2.7459954233409607"/>
         </scene>
     </scenes>
     <resources>
