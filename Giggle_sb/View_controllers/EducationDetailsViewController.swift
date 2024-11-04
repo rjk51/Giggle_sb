@@ -23,17 +23,20 @@ class EducationDetailsViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var specializationLabel: UILabel!
     @IBOutlet weak var completionYearLabel: UILabel!
     @IBOutlet weak var universityNameLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var isCurrentlyPursuing = false
     var hasEnteredPursuingDetails = false
     var isYesButtonTapped = false
     var isNoButtonTapped = false
     
-    var dropdownOptions = ["Undergraduate", "Postgraduate", "Diploma", "Certification"]
+    var dropdownOptions = ["Undergraduate", "Postgraduate", "Diploma"]
     var dropdownTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        progressView.setProgress(75/100, animated: true)
 
         // Do any additional setup after loading the view.
         currentlyPursuingLabel.isHidden = true
@@ -58,16 +61,13 @@ class EducationDetailsViewController: UIViewController, UITableViewDelegate, UIT
         isCurrentlyPursuing = true
         currentlyPursuingLabel.isHidden = false
         currentlyPursuingTextField.isHidden = false
-        if(isYesButtonTapped == true){
-            yesButton.layer.backgroundColor = CGColor(red: 230, green: 57, blue: 70, alpha: 1)
-        }
+        // Update button colors
+        yesButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0) // Red for selected
+        noButton.tintColor = UIColor(red: 0.404, green: 0.404, blue: 0.404, alpha: 1.0)
     }
     @IBAction func noButtonTapped(_ sender: UIButton) {
         isYesButtonTapped = false
         isNoButtonTapped = true
-        if(isNoButtonTapped == true){
-            noButton.layer.backgroundColor = CGColor(red: 230, green: 57, blue: 70, alpha: 1)
-        }
         isCurrentlyPursuing = false
         currentlyPursuingLabel.isHidden = true
         currentlyPursuingTextField.isHidden = true
@@ -79,7 +79,9 @@ class EducationDetailsViewController: UIViewController, UITableViewDelegate, UIT
         yearTextField.isHidden = true
         universityNameLabel.isHidden = true
         universityNameTextField.isHidden = true
-        noButton.layer.backgroundColor = CGColor(red: 230, green: 57, blue: 70, alpha: 1)
+        // Update button colors
+        noButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0) // Red for selected
+        yesButton.tintColor = UIColor(red: 0.404, green: 0.404, blue: 0.404, alpha: 1.0) // Reset yesButton to normal color
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {

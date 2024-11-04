@@ -11,12 +11,14 @@ import CoreLocation
 class LocationDetailsViewController: UIViewController, CLLocationManagerDelegate  {
 
     @IBOutlet weak var pickLocationButton: UIButton!
+    @IBOutlet weak var progressView: UIProgressView!
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        progressView.setProgress(50/100, animated: true)
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }

@@ -7,16 +7,21 @@
 
 import UIKit
 
-class SkillsViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate,  UICollectionViewDataSource, UICollectionViewDelegate {
+class SkillsViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var skillsTextField: UITextField!
     @IBOutlet weak var chipsContainerView: UIView!
-    @IBOutlet weak var suggestCollectionView: UICollectionView!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var suggestedSkillsContainerView: UIView!
+    @IBOutlet weak var finishButton: UIButton!
     var chipsStackView: UIStackView!
-    var suggestedSkills = ["Swift", "Objective-C", "Python", "Java", "SQL", "JavaScript", "Flutter", "React", "Dart"]
+    var suggestedSkills = ["UI/UX", "Designing", "Writing", "Programming", "Accounting", "Finance", "Management", "Fluent", "Scripting"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        finishButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0)
+        progressView.setProgress(1.0, animated: true)
         
         // Set up the text field delegate
         skillsTextField.delegate = self
@@ -25,14 +30,11 @@ class SkillsViewController: UIViewController, UITextViewDelegate, UITextFieldDel
         // Initialize the stack view for chips
         setupChipsStackView()
         
-        // Set up collection view
-        suggestCollectionView.delegate = self
-        suggestCollectionView.dataSource = self
-        suggestCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "SkillCell")
+        // Set up the suggested skills buttons
+        setupSuggestedSkillsButtons()
     }
     
     func setupChipsStackView() {
-        // Initialize the stack view and add it to the container
         chipsStackView = UIStackView()
         chipsStackView.axis = .horizontal
         chipsStackView.spacing = 8
@@ -40,16 +42,67 @@ class SkillsViewController: UIViewController, UITextViewDelegate, UITextFieldDel
         chipsStackView.distribution = .fillProportionally
         chipsStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Add stack view to container view
         chipsContainerView.addSubview(chipsStackView)
         
-        // Set constraints for stack view
         NSLayoutConstraint.activate([
             chipsStackView.leadingAnchor.constraint(equalTo: chipsContainerView.leadingAnchor, constant: 8),
             chipsStackView.trailingAnchor.constraint(equalTo: chipsContainerView.trailingAnchor, constant: -8),
             chipsStackView.topAnchor.constraint(equalTo: chipsContainerView.topAnchor, constant: 8),
             chipsStackView.bottomAnchor.constraint(equalTo: chipsContainerView.bottomAnchor, constant: -8)
         ])
+    }
+    
+    func setupSuggestedSkillsButtons() {
+        // Create a vertical stack view to hold rows
+        let verticalStackView = UIStackView()
+        verticalStackView.axis = .vertical
+        verticalStackView.spacing = 8
+        verticalStackView.alignment = .fill
+        verticalStackView.distribution = .fillEqually
+        verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        suggestedSkillsContainerView.addSubview(verticalStackView)
+        
+        // Add rows of buttons
+        let buttonsPerRow = 3
+        for i in 0..<suggestedSkills.count {
+            if i % buttonsPerRow == 0 {
+                // Create a new horizontal row stack view every 3 items
+                let horizontalStackView = UIStackView()
+                horizontalStackView.axis = .horizontal
+                horizontalStackView.spacing = 8
+                horizontalStackView.alignment = .fill
+                horizontalStackView.distribution = .fillEqually
+                
+                // Add the row to the vertical stack view
+                verticalStackView.addArrangedSubview(horizontalStackView)
+            }
+            
+            // Add button to the current row stack view
+            let button = createSkillButton(title: suggestedSkills[i])
+            if let rowStackView = verticalStackView.arrangedSubviews.last as? UIStackView {
+                rowStackView.addArrangedSubview(button)
+            }
+        }
+        
+        // Set up constraints for vertical stack view
+        NSLayoutConstraint.activate([
+            verticalStackView.leadingAnchor.constraint(equalTo: suggestedSkillsContainerView.leadingAnchor, constant: 8),
+            verticalStackView.trailingAnchor.constraint(equalTo: suggestedSkillsContainerView.trailingAnchor, constant: -8),
+            verticalStackView.topAnchor.constraint(equalTo: suggestedSkillsContainerView.topAnchor, constant: 8),
+            verticalStackView.bottomAnchor.constraint(equalTo: suggestedSkillsContainerView.bottomAnchor, constant: -8)
+        ])
+    }
+
+    func createSkillButton(title: String) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(red: 0.976, green: 0.78, blue: 0.31, alpha: 1.0)
+        button.layer.cornerRadius = 6
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(skillButtonTapped(_:)), for: .touchUpInside)
+        return button
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -61,7 +114,6 @@ class SkillsViewController: UIViewController, UITextViewDelegate, UITextFieldDel
     }
 
     func addChip(text: String) {
-        // Create a chip label
         let chipLabel = UILabel()
         chipLabel.text = text
         chipLabel.backgroundColor = .systemYellow
@@ -70,18 +122,14 @@ class SkillsViewController: UIViewController, UITextViewDelegate, UITextFieldDel
         chipLabel.clipsToBounds = true
         chipLabel.textAlignment = .center
         
-        // Set padding inside the chip
         chipLabel.translatesAutoresizingMaskIntoConstraints = false
         chipLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
-        // Width constraint to avoid compression
         chipLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
         chipLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
-        // Adding the chip to the stack view
         chipsStackView.addArrangedSubview(chipLabel)
         
-        // Tap gesture for removing chip
         chipLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(removeChip(_:)))
         chipLabel.addGestureRecognizer(tapGesture)
@@ -93,71 +141,13 @@ class SkillsViewController: UIViewController, UITextViewDelegate, UITextFieldDel
             chipLabel.removeFromSuperview()
         }
     }
-    
-    // MARK: - UICollectionViewDataSource
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return suggestedSkills.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkillCell", for: indexPath)
-        
-        // Customize cell for skill button
-        let skillButton = UIButton(type: .system)
-        skillButton.setTitle(suggestedSkills[indexPath.item], for: .normal)
-        skillButton.setTitleColor(.white, for: .normal)
-        skillButton.backgroundColor = .systemBlue
-        skillButton.layer.cornerRadius = 6
-        skillButton.clipsToBounds = true
-        skillButton.addTarget(self, action: #selector(skillButtonTapped(_:)), for: .touchUpInside)
-        
-        // Add padding inside the button
-        skillButton.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16)
-        
-        // Add button to cell
-        cell.contentView.addSubview(skillButton)
-        skillButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            skillButton.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor),
-            skillButton.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
-            skillButton.widthAnchor.constraint(equalToConstant: 120), // Fixed width
-            skillButton.heightAnchor.constraint(equalToConstant: 40) // Fixed height
-        ])
-        
-        return cell
-    }
-    
-    // Handle button tap
     @objc func skillButtonTapped(_ sender: UIButton) {
         if let skill = sender.titleLabel?.text {
             addChip(text: skill)
         }
     }
-
-    // MARK: - UICollectionViewDelegateFlowLayout
-    let numberOfCellsPerRow: CGFloat = 3
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // Calculate the total width of the collection view
-        let collectionViewWidth = collectionView.bounds.width
-        
-        // Define the spacing between cells
-        let spacing: CGFloat = 8.0
-        let totalSpacing = (numberOfCellsPerRow - 1) * spacing
-        
-        // Calculate the width of each cell
-        let cellWidth = (collectionViewWidth - totalSpacing) / numberOfCellsPerRow
-        let cellHeight: CGFloat = 50.0 // Set a fixed height for the cells
-        
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8 // Space between rows
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8 // Space between cells in the same row
+    @IBAction func finishButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToHomeScreen", sender: self)
     }
 }
