@@ -40,6 +40,10 @@ struct Gig: Codable {
     let salary: Double
     let postedAt: Date
     let approximity: String
+    let experience: String
+    let gigInfo: [[String: String]]
+    let facilites: [String]
+    let gigAvatar: String
 }
 
 // MARK: - Employer
