@@ -7,47 +7,42 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var userProfile: UIImageView!
     @IBOutlet weak var flnTestButton: UIButton!
-    @IBOutlet weak var gigCardView: UIView!
-    @IBOutlet weak var gigAvatar: UIImageView!
-    @IBOutlet weak var companyTileLabel: UILabel!
-    @IBOutlet weak var saveGigButton: UIButton!
-    @IBOutlet weak var gigTitleLabel: UILabel!
-    @IBOutlet weak var gigLocationLabel: UILabel!
-    @IBOutlet weak var gigExperienceLabel: UILabel!
-    @IBOutlet weak var gigTypeLabel: UILabel!
-    @IBOutlet weak var gigSalaryLabel: UILabel!
+    @IBOutlet weak var gigsTableView: UITableView!
+    
+    var gigs: [Gig] = sampleGigs
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gigCardView.layer.borderWidth = 1
-        gigCardView.layer.borderColor = CGColor(red: 0.647, green: 0.647, blue: 0.647, alpha: 1.0)
-        gigCardView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        gigCardView.layer.shadowColor = CGColor(red: 0.373, green: 0.373, blue: 0.373, alpha: 0.6)
-        gigCardView.layer.shadowOpacity = 7.2
-        gigCardView.layer.shadowRadius = 2
-        gigCardView.layer.masksToBounds = false
-        gigCardView.layer.cornerRadius = 20
         
-        configureGigCard(with: sampleGigs[0])
+        gigsTableView.dataSource = self
+        gigsTableView.delegate = self
+        gigsTableView.rowHeight = UITableView.automaticDimension
+//        gigsTableView.estimatedRowHeight = 150
+        gigsTableView.rowHeight = 250
         
 
         // Do any additional setup after loading the view.
     }
-    func configureGigCard(with gig: Gig) {
-        gigTitleLabel.text = gig.title
-        companyTileLabel.text = "\(gig.employerId)"
-        gigLocationLabel.text = "\(gig.location)"
-        gigExperienceLabel.text = "\(gig.experience)"
-        gigTypeLabel.text = "\(gig.duration)"
-        gigSalaryLabel.text = String(format: "$%.2f", gig.salary)
+    
+    @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return gigs.count
+        }
 
-        // Example avatar image
-        gigAvatar.image = UIImage(named: "placeholderAvatar") // Use an actual image asset here
+    @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GigCardCell", for: indexPath) as? GigCardCell else {
+            return UITableViewCell()
+        }
         
+        // Configure cell with Gig data
+        let gig = gigs[indexPath.row]
+        cell.configure(with: gig)
+        
+        return cell
     }
 
     /*
