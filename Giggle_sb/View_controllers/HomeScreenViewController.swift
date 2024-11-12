@@ -24,14 +24,31 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         gigsTableView.rowHeight = UITableView.automaticDimension
 //        gigsTableView.estimatedRowHeight = 150
         gigsTableView.rowHeight = 250
-        
+        flnTestButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0)
+        self.navigationItem.backButtonTitle = "Back"
+        gigsTableView.allowsSelection = true
+        print("Navigation Controller:", navigationController ?? "No navigation controller")
 
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.clear
+        return footerView
+    }
+    
     @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return gigs.count
-        }
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.gigs.count
+    }
 
     @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GigCardCell", for: indexPath) as? GigCardCell else {
@@ -39,10 +56,24 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         // Configure cell with Gig data
-        let gig = gigs[indexPath.row]
+        let gig = gigs[indexPath.section]
         cell.configure(with: gig)
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Cell selected at section \(indexPath.section)")
+            
+        let gig = gigs[indexPath.section]
+        
+        // Instantiate GigDetailsViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let gigDetailsVC = storyboard.instantiateViewController(withIdentifier: "GigDescriptionViewController") as? GigDescriptionViewController {
+            gigDetailsVC.gig = gig
+            navigationController?.pushViewController(gigDetailsVC, animated: true)
+        } else {
+            print("Could not instantiate GigDescriptionViewController")
+        }
     }
 
     /*

@@ -29,19 +29,22 @@ class GigCardCell: UITableViewCell {
 
         // Add shadow
         containerView.layer.shadowColor = CGColor(red: 0.373, green: 0.373, blue: 0.373, alpha: 0.6)
-        containerView.layer.shadowOpacity = 0.2
+        containerView.layer.shadowOpacity = 0.8
         containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
         containerView.layer.shadowRadius = 4
     }
     
     func configure(with gig: Gig) {
         // Set data for each UI component from the Gig model
-        companyTileLabel.text = gig.title
-        gigTitleLabel.text = gig.description
+        companyTileLabel.text = gig.companyName
+        gigTitleLabel.text = gig.title
         gigLocationLabel.text = gig.location
         gigExperienceLabel.text = gig.experience
         gigTypeLabel.text = gig.duration
         gigSalaryLabel.text = "$\(gig.salary)"
+        gigAvatar.image = UIImage(named: gig.gigAvatar)
+        gigAvatar.layer.cornerRadius = gigAvatar.frame.width / 2
+        gigAvatar.clipsToBounds = true
         // Configure gigAvatar and other UI elements if needed
 //        gigCardView.layer.borderWidth = 1
 //        gigCardView.layer.borderColor = CGColor(red: 0.647, green: 0.647, blue: 0.647, alpha: 1.0)

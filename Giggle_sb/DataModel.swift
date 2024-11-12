@@ -7,6 +7,7 @@
 
 
 import Foundation
+import UIKit
 
 // MARK: - UserReg
 struct UserReg: Codable {
@@ -44,6 +45,7 @@ struct Gig: Codable {
     let gigInfo: [[String: String]]
     let facilites: [String]
     let gigAvatar: String
+    let companyName: String
 }
 
 // MARK: - Employer

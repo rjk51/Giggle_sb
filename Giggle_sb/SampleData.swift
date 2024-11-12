@@ -26,7 +26,8 @@ let sampleGigs: [Gig] = [
             ["Deadline": "6 months"]
         ],
         facilites: ["Health Insurance", "Paid Time Off", "Gym Membership"],
-        gigAvatar: "gig1.jpg"
+        gigAvatar: "apple1",
+        companyName: "Apple"
     ),
     Gig(
         id: "2",
@@ -46,7 +47,8 @@ let sampleGigs: [Gig] = [
             ["Deadline": "12 months"]
         ],
         facilites: ["Remote Work Stipend", "Flexible Hours", "Stock Options"],
-        gigAvatar: "gig2.jpg"
+        gigAvatar: "Image",
+        companyName: "Google"
     ),
     Gig(
         id: "3",
@@ -66,6 +68,7 @@ let sampleGigs: [Gig] = [
             ["Deadline": "3 months"]
         ],
         facilites: ["Commuter Benefits", "Health Insurance", "Catered Lunches"],
-        gigAvatar: "gig3.jpg"
+        gigAvatar: "amazon",
+        companyName: "Amazon"
     )
 ]
