@@ -148,6 +148,38 @@ class SkillsViewController: UIViewController, UITextFieldDelegate{
         }
     }
     @IBAction func finishButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToHomeScreen", sender: self)
+//        performSegue(withIdentifier: "goToHomeScreen", sender: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        let notificationsVC = storyboard.instantiateViewController(withIdentifier: "NotificationsViewController") as! NotificationsViewController
+
+        // Embed each view controller in a navigation controller
+        let homeNavController = UINavigationController(rootViewController: homeVC)
+        homeNavController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+
+        let searchNavController = UINavigationController(rootViewController: searchVC)
+        searchNavController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+
+        let notificationsNavController = UINavigationController(rootViewController: notificationsVC)
+        notificationsNavController.tabBarItem = UITabBarItem(title: "Notifications", image: UIImage(systemName: "bell.fill"), tag: 2)
+
+        // Create tab bar controller and add navigation controllers
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [homeNavController, searchNavController, notificationsNavController]
+        tabBarController.tabBar.backgroundColor = .black
+        tabBarController.tabBar.tintColor = .red
+        tabBarController.tabBar.unselectedItemTintColor = .white
+
+        // Transition to the tab bar controller
+        if let windowScene = view.window?.windowScene {
+            for window in windowScene.windows {
+                if window.isKeyWindow {
+                    window.rootViewController = tabBarController
+                    window.makeKeyAndVisible()
+                }
+            }
+        }
     }
 }

@@ -136,18 +136,18 @@ class EducationDetailsViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     // MARK: - UITableViewDataSource Methods
-    @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dropdownOptions.count
     }
     
-    @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DropdownCell", for: indexPath)
         cell.textLabel?.text = dropdownOptions[indexPath.row]
         return cell
     }
     
     // MARK: - UITableViewDelegate Methods
-    @objc(tableView:didSelectRowAtIndexPath:) func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentlyPursuingTextField.text = dropdownOptions[indexPath.row]
         dropdownTableView.isHidden = true // Hide dropdown after selection
         currentlyPursuingTextField.resignFirstResponder() // Dismiss keyboard if it's showing
