@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		19E9AA452CD62268009F768B /* Button-red.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9AA442CD62268009F768B /* Button-red.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		3541BCC42CC651CE0007E74B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -28,7 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19E9AA442CD62268009F768B /* Button-red.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Button-red.swift"; path = "Giggle_sb/Button-red.swift"; sourceTree = "<group>"; };
 		3541BCAA2CC651CD0007E74B /* Giggle_sb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giggle_sb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3541BCC32CC651CE0007E74B /* Giggle_sbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Giggle_sbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3541BCCD2CC651CE0007E74B /* Giggle_sbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Giggle_sbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +88,6 @@
 		3541BCA12CC651CD0007E74B = {
 			isa = PBXGroup;
 			children = (
-				19E9AA442CD62268009F768B /* Button-red.swift */,
 				3541BCAC2CC651CD0007E74B /* Giggle_sb */,
 				3541BCC62CC651CE0007E74B /* Giggle_sbTests */,
 				3541BCD02CC651CE0007E74B /* Giggle_sbUITests */,
@@ -255,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19E9AA452CD62268009F768B /* Button-red.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

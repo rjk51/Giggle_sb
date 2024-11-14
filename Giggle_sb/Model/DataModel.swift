@@ -35,14 +35,15 @@ struct Gig: Codable {
     let title: String
     let description: String
     let employerId: String
-    let requiredSkills: [String]
+    let requirements: [String]
     let location: String
     let duration: String
     let salary: Double
     let postedAt: Date
     let approximity: String
     let experience: String
-    let gigInfo: [[String: String]]
+    let qualification: String
+    let specialization: String
     let facilites: [String]
     let gigAvatar: String
     let companyName: String

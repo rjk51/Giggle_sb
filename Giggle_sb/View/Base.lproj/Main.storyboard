@@ -1584,12 +1584,24 @@ your current city or nearby cities.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="hCj-p3-upF" id="5ST-Nd-VAP"/>
+                        <outlet property="addressMap" destination="WLF-RN-0du" id="1Qy-jq-Isv"/>
                         <outlet property="companyNameLabel" destination="wdA-VO-Duh" id="xu9-J3-Nwa"/>
-                        <outlet property="experienceLabel" destination="tMh-w8-3iP" id="bWn-aX-Kdb"/>
+                        <outlet property="experienceInfoLabel" destination="tMh-w8-3iP" id="csy-St-wmr"/>
+                        <outlet property="experienceLabel" destination="tMh-w8-3iP" id="Lrg-JB-NSb"/>
+                        <outlet property="facilityTableView" destination="WJd-gM-QSH" id="Iz0-Nb-ewp"/>
                         <outlet property="gigAvatarImageView" destination="MRv-Lh-zKW" id="Gna-gx-va4"/>
+                        <outlet property="gigDescriptionLabel" destination="VNK-Vl-8Zd" id="b15-N6-rUg"/>
                         <outlet property="gigTitleLabel" destination="1SI-Sl-bOW" id="g1x-AT-gyD"/>
+                        <outlet property="jobTypeLabel" destination="dNi-MJ-Qg0" id="Ai0-MQ-X11"/>
                         <outlet property="locationLabel" destination="Vxj-a9-OJ0" id="iey-qG-9Ep"/>
-                        <outlet property="salaryLabel" destination="MqE-UI-mj4" id="YHp-H1-aqW"/>
+                        <outlet property="positionLabel" destination="BR7-pW-T7P" id="IWw-Vy-4nO"/>
+                        <outlet property="postedAtLabel" destination="6UZ-ZG-QQr" id="dIO-h3-m0Z"/>
+                        <outlet property="qualificationLabel" destination="A8G-u4-9zz" id="jqt-l3-MDL"/>
+                        <outlet property="requirementsTabelView" destination="gES-UV-JAl" id="91s-8v-w7a"/>
+                        <outlet property="salaryInfoLabel" destination="MqE-UI-mj4" id="Mdm-Xq-Jxx"/>
+                        <outlet property="salaryLabel" destination="MqE-UI-mj4" id="Qaa-8q-I5p"/>
+                        <outlet property="specLabel" destination="KmB-Af-pFI" id="Avb-U8-Bid"/>
                         <outlet property="typeLabel" destination="dNi-MJ-Qg0" id="Cbt-t3-4U7"/>
                     </connections>
                 </viewController>
@@ -2039,7 +2051,7 @@ your current city or nearby cities.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w6B-G8-6PT"/>
-        <segue reference="rEg-hC-wqE"/>
+        <segue reference="b2I-dQ-mNW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Frame 99245773" width="262" height="220"/>

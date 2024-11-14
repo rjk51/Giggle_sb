@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class GigDescriptionViewController: UIViewController {
 
@@ -17,6 +18,18 @@ class GigDescriptionViewController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var salaryLabel: UILabel!
     @IBOutlet weak var gigAvatarImageView: UIImageView!
+    @IBOutlet weak var postedAtLabel: UILabel!
+    @IBOutlet weak var gigDescriptionLabel: UILabel!
+    @IBOutlet weak var requirementsTabelView: UITableView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressMap: MKMapView!
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var qualificationLabel: UILabel!
+    @IBOutlet weak var experienceInfoLabel: UILabel!
+    @IBOutlet weak var jobTypeLabel: UILabel!
+    @IBOutlet weak var specLabel: UILabel!
+    @IBOutlet weak var salaryInfoLabel: UILabel!
+    @IBOutlet weak var facilityTableView: UITableView!
     
     // Property to hold the gig data passed from HomeScreenViewController
     var gig: Gig?
