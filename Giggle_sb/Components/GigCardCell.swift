@@ -32,6 +32,9 @@ class GigCardCell: UITableViewCell {
         containerView.layer.shadowOpacity = 0.8
         containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
         containerView.layer.shadowRadius = 4
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(red: 0.125, green: 0.122, blue: 0.122, alpha: 1.0)
+        self.selectedBackgroundView = selectedView
     }
     
     func configure(with gig: Gig) {

@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class GigDescriptionViewController: UIViewController {
+class GigDescriptionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     // Outlets for UI components to display gig details
     @IBOutlet weak var gigTitleLabel: UILabel!
@@ -30,6 +30,8 @@ class GigDescriptionViewController: UIViewController {
     @IBOutlet weak var specLabel: UILabel!
     @IBOutlet weak var salaryInfoLabel: UILabel!
     @IBOutlet weak var facilityTableView: UITableView!
+    @IBOutlet weak var point1: UIView!
+    @IBOutlet weak var point2: UIView!
     
     // Property to hold the gig data passed from HomeScreenViewController
     var gig: Gig?
@@ -37,16 +39,79 @@ class GigDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requirementsTabelView.dataSource = self
+        facilityTableView.dataSource = self
+        point1.layer.cornerRadius = point1.frame.width / 2
+        point2.layer.cornerRadius = point2.frame.width / 2
+        
         // Update the UI with the gig data
         if let gig = gig {
+            let address = gig.location.split(separator: ",").first.map(String.init) ?? ""
             gigTitleLabel.text = gig.title
             companyNameLabel.text = gig.companyName
-            locationLabel.text = gig.location
+            locationLabel.text = address
             experienceLabel.text = gig.experience
             typeLabel.text = gig.duration
             salaryLabel.text = "$\(gig.salary)"
-//            gigAvatarImageView.image = gig.gigAvatar // Assumes gigAvatar is of type UIImage
+            gigAvatarImageView.image = UIImage(named: gig.gigAvatar)
+            gigAvatarImageView.layer.cornerRadius = gigAvatarImageView.frame.width / 2
+            gigDescriptionLabel.text = gig.description
+            qualificationLabel.text = gig.qualification
+            jobTypeLabel.text = gig.duration
+            specLabel.text = gig.specialization
+            salaryInfoLabel.text = gig.salary.isZero ? "Not Available" : "$\(gig.salary)"
+            experienceInfoLabel.text = gig.experience
+            positionLabel.text = gig.title
+            addressLabel.text = gig.location
+            postedAtLabel.text = relativeDateString(from: gig.postedAt)
         }
+    }
+    
+    // Function to calculate relative date string
+    func relativeDateString(from date: Date) -> String {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let postedDate = calendar.startOfDay(for: date)
+        
+        let components = calendar.dateComponents([.day], from: postedDate, to: today)
+        let dayDifference = components.day ?? 0
+        
+        switch dayDifference {
+        case 0:
+            return "Today"
+        case 1:
+            return "1 day ago"
+        default:
+            return "\(dayDifference) days ago"
+        }
+    }
+    
+    // MARK: - Table View Data Source Methods
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == requirementsTabelView {
+            return gig?.requirements.count ?? 0
+        } else if tableView == facilityTableView {
+            return gig?.facilites.count ?? 0
+        }
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == requirementsTabelView {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequirementCell", for: indexPath) as? RequirementCell else {
+                return UITableViewCell()
+            }
+            cell.requirementLabel.text = gig?.requirements[indexPath.row]
+            return cell
+        } else if tableView == facilityTableView {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FacilityCell", for: indexPath) as? FacilityCell else {
+                return UITableViewCell()
+            }
+            cell.facilityLabel.text = gig?.facilites[indexPath.row]
+            return cell
+        }
+        return UITableViewCell()
     }
 
     /*
