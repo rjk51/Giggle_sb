@@ -292,7 +292,6 @@
 				DEVELOPMENT_TEAM = 9A9C6H2ML3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Giggle_sb/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"We need your location to provide better service.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +320,6 @@
 				DEVELOPMENT_TEAM = 9A9C6H2ML3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Giggle_sb/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"We need your location to provide better service.\"";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

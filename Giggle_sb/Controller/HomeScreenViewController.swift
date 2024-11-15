@@ -18,11 +18,9 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         gigsTableView.dataSource = self
         gigsTableView.delegate = self
         gigsTableView.rowHeight = UITableView.automaticDimension
-//        gigsTableView.estimatedRowHeight = 150
         gigsTableView.rowHeight = 250
         flnTestButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0)
         self.navigationItem.backButtonTitle = "Back"
@@ -30,6 +28,15 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         print("Navigation Controller:", navigationController ?? "No navigation controller")
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func goToFln(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" if your storyboard name is different
+        if let skillPickVC = storyboard.instantiateViewController(withIdentifier: "SkillPickViewController") as? SkillPickViewController {
+            navigationController?.pushViewController(skillPickVC, animated: true)
+        } else {
+            print("Could not instantiate SkillPickViewController")
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -61,6 +68,7 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected at section \(indexPath.section)")
             
@@ -85,5 +93,4 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         // Pass the selected object to the new view controller.
     }
     */
-
 }
