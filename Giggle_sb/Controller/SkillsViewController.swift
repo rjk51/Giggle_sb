@@ -163,7 +163,7 @@ class SkillsViewController: UIViewController, UITextFieldDelegate{
         searchNavController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
 
         let notificationsNavController = UINavigationController(rootViewController: notificationsVC)
-        notificationsNavController.tabBarItem = UITabBarItem(title: "Notifications", image: UIImage(systemName: "bell.fill"), tag: 2)
+        notificationsNavController.tabBarItem = UITabBarItem(title: "Notifications", image: UIImage(systemName: "bell.badge.fill"), tag: 2)
 
         // Create tab bar controller and add navigation controllers
         let tabBarController = UITabBarController()

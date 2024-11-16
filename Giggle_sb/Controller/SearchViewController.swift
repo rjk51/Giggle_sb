@@ -50,7 +50,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GigCardCell", for: indexPath) as? GigCardCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GigCardViewCell", for: indexPath) as? GigCardViewCell else {
             return UITableViewCell()
         }
 

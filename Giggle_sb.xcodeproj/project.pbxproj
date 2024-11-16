@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		35F19B9F2CE90B660018B4E3 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = 35F19B9E2CE90B660018B4E3 /* Popovers */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3541BCC42CC651CE0007E74B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35F19B9F2CE90B660018B4E3 /* Popovers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +130,7 @@
 			);
 			name = Giggle_sb;
 			packageProductDependencies = (
+				35F19B9E2CE90B660018B4E3 /* Popovers */,
 			);
 			productName = Giggle_sb;
 			productReference = 3541BCAA2CC651CD0007E74B /* Giggle_sb.app */;
@@ -208,6 +214,9 @@
 			);
 			mainGroup = 3541BCA12CC651CD0007E74B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				35F19B9D2CE90B660018B4E3 /* XCRemoteSwiftPackageReference "Popovers" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3541BCAB2CC651CD0007E74B /* Products */;
 			projectDirPath = "";
@@ -569,6 +578,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		35F19B9D2CE90B660018B4E3 /* XCRemoteSwiftPackageReference "Popovers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Popovers";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		35F19B9E2CE90B660018B4E3 /* Popovers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35F19B9D2CE90B660018B4E3 /* XCRemoteSwiftPackageReference "Popovers" */;
+			productName = Popovers;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3541BCA22CC651CD0007E74B /* Project object */;
 }

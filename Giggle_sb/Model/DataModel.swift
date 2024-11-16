@@ -49,6 +49,15 @@ struct Gig: Codable {
     let companyName: String
 }
 
+// MARK: - Notifications
+struct Notifications: Codable {
+    let id: String
+    let gigAvatar: String
+    let notificationContent: String
+    let postedAt: String
+    var isRead: Bool
+}
+
 // MARK: - Employer
 struct Employer: Codable {
     let id: String

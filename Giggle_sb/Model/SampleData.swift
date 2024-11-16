@@ -56,3 +56,19 @@ let sampleGigs: [Gig] = [
         companyName: "Amazon"
     )
 ]
+var sampleNotifications: [Notifications] = [
+    Notifications(
+        id: "1",
+        gigAvatar: "Image",
+        notificationContent: "You have a new job opportunity at Google. Apply now!",
+        postedAt: "15h",
+        isRead: false
+    ),
+    Notifications(
+        id: "2",
+        gigAvatar: "amazon",
+        notificationContent: "Amazon have accepted your application for the Data Analyst role.",
+        postedAt: "20h",
+        isRead: false
+    )
+]
