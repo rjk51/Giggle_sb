@@ -1,5 +1,5 @@
 //
-//  LiteracyViewController.swift
+//  NumeracyViewController.swift
 //  Giggle_sb
 //
 //  Created by rjk on 17/11/24.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-class LiteracyViewController: UIViewController {
+class NumeracyViewController: UIViewController {
 
     // Outlets
     @IBOutlet weak var questionProgressLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet var optionButtons: [UIButton]!
+    @IBOutlet weak var nextButton: UIButton!
     
     private var currentQuestionIndex: Int = 0
     private var remainingTime: Int = 300 // 5 minutes in seconds
@@ -78,6 +78,7 @@ class LiteracyViewController: UIViewController {
             // End of test
             print("Test completed")
             calculateAndShowResult()
+//            performSegue(withIdentifier: "showResults", sender: nil)
         }
     }
 
@@ -95,7 +96,6 @@ class LiteracyViewController: UIViewController {
         let alert = UIAlertController(title: "Test Completed", message: "Your score: \(Int(percentage))%", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             // Optionally navigate to another screen
-            self.performSegue(withIdentifier: "goToNumeracy", sender: self)
         }))
         present(alert, animated: true, completion: nil)
     }

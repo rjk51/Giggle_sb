@@ -72,3 +72,13 @@ var sampleNotifications: [Notifications] = [
         isRead: false
     )
 ]
+
+
+var questions: [LiteracyQuestion] = [
+    LiteracyQuestion(question: "Is Python case sensitive when dealing with identifiers?",
+             options: ["No", "Yes", "Machine dependent", "None of the mentioned"],
+                     correctAnswer: "Yes"),
+    LiteracyQuestion(question: "What is the correct file extension for Python files?",
+                     options: [".py", ".python", ".pyt", ".code"], correctAnswer: ".py")
+]
+

@@ -1,45 +1,25 @@
 //
-//  HomeScreenViewController.swift
+//  AllGigsViewController.swift
 //  Giggle_sb
 //
-//  Created by rjk on 06/11/24.
+//  Created by rjk on 18/11/24.
 //
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AllGigsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var userProfile: UIImageView!
-    @IBOutlet weak var flnTestButton: UIButton!
-    @IBOutlet weak var gigsTableView: UITableView!
-    @IBOutlet weak var seeAllButton: UIButton!
-    
+    @IBOutlet weak var tableView: UITableView!
     var gigs: [Gig] = sampleGigs
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        gigsTableView.dataSource = self
-        gigsTableView.delegate = self
-        gigsTableView.rowHeight = UITableView.automaticDimension
-        gigsTableView.rowHeight = 250
-        flnTestButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0)
-        self.navigationItem.backButtonTitle = "Back"
-        gigsTableView.allowsSelection = true
-        print("Navigation Controller:", navigationController ?? "No navigation controller")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "GigCardViewCell", bundle: nil), forCellReuseIdentifier: "GigCardViewCell")
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func goToFln(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" if your storyboard name is different
-        if let skillPickVC = storyboard.instantiateViewController(withIdentifier: "SkillPickViewController") as? SkillPickViewController {
-            navigationController?.pushViewController(skillPickVC, animated: true)
-        } else {
-            print("Could not instantiate SkillPickViewController")
-        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 20
     }
@@ -59,7 +39,7 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GigCardCell", for: indexPath) as? GigCardCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GigCardViewCell", for: indexPath) as? GigCardViewCell else {
             return UITableViewCell()
         }
         
@@ -84,10 +64,8 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
             print("Could not instantiate GigDescriptionViewController")
         }
     }
+    
 
-    @IBAction func seeAllTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(AllGigsViewController(), animated: true)
-    }
     /*
     // MARK: - Navigation
 
@@ -97,4 +75,5 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         // Pass the selected object to the new view controller.
     }
     */
+
 }
