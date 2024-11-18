@@ -108,9 +108,9 @@ struct SkillValidationUiUx: Codable {
 }
 
 // MARK: - Literacy Question
-struct LiteracyQuestion: Codable {
-    let id: String
-    let questionText: String
+struct LiteracyQuestion {
+    let question: String
+    let options: [String]
 }
 
 // MARK: - Literacy Answer
