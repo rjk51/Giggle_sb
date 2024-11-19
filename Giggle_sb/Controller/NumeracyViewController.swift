@@ -16,10 +16,12 @@ class NumeracyViewController: UIViewController {
     @IBOutlet var optionButtons: [UIButton]!
     @IBOutlet weak var nextButton: UIButton!
     
+    private var numeracyScore: NumeracyScore?
     private var currentQuestionIndex: Int = 0
     private var remainingTime: Int = 300 // 5 minutes in seconds
     private var timer: Timer?
     private var userAnswers: [String] = [] // Stores user answers
+    private var selectedAnswer: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,7 @@ class NumeracyViewController: UIViewController {
             timer?.invalidate()
             timerLabel.text = "00:00"
             // Show result when time runs out
-            calculateAndShowResult()
+            calculateResult()
         }
     }
 
@@ -52,10 +54,13 @@ class NumeracyViewController: UIViewController {
             button.setTitle(currentQuestion.options[index], for: .normal)
             button.backgroundColor = .clear // Reset button color
         }
+        nextButton.isEnabled = false
+        selectedAnswer = nil
     }
 
     @IBAction func optionTapped(_ sender: UIButton) {
         // Handle option selection
+        selectedAnswer = sender.currentTitle
         print("Option tapped: \(sender.currentTitle ?? "")")
         for button in optionButtons {
             UIView.animate(withDuration: 0.2) {
@@ -68,21 +73,27 @@ class NumeracyViewController: UIViewController {
             sender.tintColor = UIColor(red: 0.902, green: 0.224, blue: 0.275, alpha: 1)
             sender.setTitleColor(.white, for: .normal)
         }
+        nextButton.isEnabled = true
     }
 
     @IBAction func nextTapped(_ sender: UIButton) {
+        if let answer = selectedAnswer {
+            userAnswers.append(answer) // Store the selected answer
+        } else {
+            userAnswers.append("") // Add an empty answer if none was selected
+        }
         if currentQuestionIndex < questions.count - 1 {
             currentQuestionIndex += 1
             updateUI()
         } else {
             // End of test
             print("Test completed")
-            calculateAndShowResult()
-//            performSegue(withIdentifier: "showResults", sender: nil)
+            calculateResult()
+            self.performSegue(withIdentifier: "goToScore", sender: self)
         }
     }
 
-    private func calculateAndShowResult() {
+    private func calculateResult() {
         // Calculate percentage
         var correctAnswers = 0
         for (index, question) in questions.enumerated() {
@@ -91,13 +102,10 @@ class NumeracyViewController: UIViewController {
             }
         }
         let percentage = Double(correctAnswers) / Double(questions.count) * 100
+        numeracyScore = NumeracyScore(score: percentage)
+        UserDefaults.standard.set(percentage, forKey: "numeracyScore")
+        print(percentage)
 
-        // Show result in an alert
-        let alert = UIAlertController(title: "Test Completed", message: "Your score: \(Int(percentage))%", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            // Optionally navigate to another screen
-        }))
-        present(alert, animated: true, completion: nil)
     }
 
     private func formatTime(_ seconds: Int) -> String {

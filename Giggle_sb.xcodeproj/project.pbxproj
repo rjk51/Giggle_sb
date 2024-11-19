@@ -301,6 +301,12 @@
 				DEVELOPMENT_TEAM = 9A9C6H2ML3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Giggle_sb/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs access to your microphone to record audio. Please enable microphone access in Settings.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app requires your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app requires your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs access to your microphone to record audio. Please enable microphone access in Settings.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to record audio. Please enable microphone access in Settings.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -329,6 +335,12 @@
 				DEVELOPMENT_TEAM = 9A9C6H2ML3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Giggle_sb/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs access to your microphone to record audio. Please enable microphone access in Settings.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app requires your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app requires your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs access to your microphone to record audio. Please enable microphone access in Settings.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to record audio. Please enable microphone access in Settings.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

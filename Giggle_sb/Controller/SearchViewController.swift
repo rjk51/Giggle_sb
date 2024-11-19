@@ -12,6 +12,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var jobTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet var buttonCollection: [UIButton]!
     
     var filteredGigs: [Gig] = []
 
@@ -25,6 +27,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Optionally, you can set up a target action for the text fields to perform the search
         jobTextField.addTarget(self, action: #selector(searchGigs), for: .editingChanged)
         locationTextField.addTarget(self, action: #selector(searchGigs), for: .editingChanged)
+        filterButton.tintColor = UIColor(red: 0.831, green: 0.286, blue: 0.298, alpha: 1)
+        //change color of buttom collection
+        let color = UIColor(red: 0.796, green: 0.788, blue: 0.831, alpha: 0.4)
+        buttonCollection.forEach { $0.tintColor = color }
     }
 
     @objc func searchGigs() {
@@ -42,10 +48,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Reload the table view to display the filtered results
         tableView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.clear
+        return footerView
+    }
 
     // MARK: - UITableView DataSource and Delegate Methods
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
         return filteredGigs.count
     }
 
@@ -54,10 +73,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return UITableViewCell()
         }
 
-        let gig = filteredGigs[indexPath.row]
+        let gig = filteredGigs[indexPath.section]
         cell.configure(with: gig)
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 246
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

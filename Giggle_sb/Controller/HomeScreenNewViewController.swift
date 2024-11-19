@@ -7,27 +7,39 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeScreenNewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var userProfile: UIImageView!
-    @IBOutlet weak var flnTestButton: UIButton!
+    @IBOutlet weak var scoreButton: UIButton!
     @IBOutlet weak var gigsTableView: UITableView!
     @IBOutlet weak var seeAllButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var flnView: UIView!
     
     var gigs: [Gig] = sampleGigs
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        flnView.layer.borderWidth = 1
+        flnView.layer.borderColor = CGColor(red: 0.647, green: 0.647, blue: 0.647, alpha: 1)
+        flnView.layer.cornerRadius = 20
+        flnView.layer.masksToBounds = true
+        flnView.layer.shadowColor = UIColor.white.cgColor
+        flnView.layer.shadowOpacity = 0.2
+        flnView.layer.shadowRadius = 10
+        
         gigsTableView.dataSource = self
         gigsTableView.delegate = self
         gigsTableView.rowHeight = UITableView.automaticDimension
         gigsTableView.rowHeight = 250
-        flnTestButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0)
+        scoreButton.tintColor = UIColor(red: 0.89, green: 0.25, blue: 0.25, alpha: 1.0)
+        scoreButton.titleLabel?.font = UIFont.systemFont(ofSize: 11, weight: .bold)
         self.navigationItem.backButtonTitle = "Back"
         gigsTableView.allowsSelection = true
         print("Navigation Controller:", navigationController ?? "No navigation controller")
+        scoreLabel.text = UserDefaults.standard.string(forKey: "grade")
 
         if let userName = UserDefaults.standard.string(forKey: "userName") {
             nameLabel.text = userName
@@ -41,12 +53,12 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func goToFln(_ sender: UIButton) {
+    @IBAction func scoreButtonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" if your storyboard name is different
-        if let skillPickVC = storyboard.instantiateViewController(withIdentifier: "SkillPickViewController") as? SkillPickViewController {
-            navigationController?.pushViewController(skillPickVC, animated: true)
+        if let scoreVC = storyboard.instantiateViewController(withIdentifier: "ScoreViewController") as? ScoreViewController {
+            navigationController?.pushViewController(scoreVC, animated: true)
         } else {
-            print("Could not instantiate SkillPickViewController")
+            print("Could not instantiate ScoreViewController")
         }
     }
     

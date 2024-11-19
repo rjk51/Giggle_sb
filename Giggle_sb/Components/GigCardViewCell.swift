@@ -24,7 +24,8 @@ class GigCardViewCell: UITableViewCell {
         // Apply styling to the contain
         containerView.layer.borderColor = CGColor(red: 0.647, green: 0.647, blue: 0.647, alpha: 1.0)
         containerView.layer.cornerRadius = 20
-        containerView.layer.masksToBounds = false
+        containerView.clipsToBounds = true
+//        containerView.layer.masksToBounds = false
 
         // Add shadow
         containerView.layer.shadowColor = CGColor(red: 0.373, green: 0.373, blue: 0.373, alpha: 0.6)
