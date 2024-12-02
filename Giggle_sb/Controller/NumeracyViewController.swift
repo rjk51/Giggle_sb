@@ -46,7 +46,7 @@ class NumeracyViewController: UIViewController {
     }
 
     private func updateUI() {
-        let currentQuestion = questions[currentQuestionIndex]
+        let currentQuestion = numeracyQuestions[currentQuestionIndex]
         questionProgressLabel.text = "\(currentQuestionIndex + 1)/\(questions.count)"
         questionLabel.text = currentQuestion.question
 
@@ -70,7 +70,7 @@ class NumeracyViewController: UIViewController {
         }
 
         UIView.animate(withDuration: 0.2) {
-            sender.tintColor = UIColor(red: 0.902, green: 0.224, blue: 0.275, alpha: 1)
+            sender.tintColor = UIColor(red: 0.29, green: 0.306, blue: 0.412, alpha: 1)
             sender.setTitleColor(.white, for: .normal)
         }
         nextButton.isEnabled = true
@@ -96,7 +96,7 @@ class NumeracyViewController: UIViewController {
     private func calculateResult() {
         // Calculate percentage
         var correctAnswers = 0
-        for (index, question) in questions.enumerated() {
+        for (index, question) in numeracyQuestions.enumerated() {
             if index < userAnswers.count && userAnswers[index] == question.correctAnswer {
                 correctAnswers += 1
             }

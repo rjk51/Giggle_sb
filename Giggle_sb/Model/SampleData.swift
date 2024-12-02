@@ -75,11 +75,58 @@ var sampleNotifications: [Notifications] = [
 
 
 var questions: [LiteracyQuestion] = [
-    LiteracyQuestion(question: "Is Python case sensitive when dealing with identifiers?",
-             options: ["No", "Yes", "Machine dependent", "None of the mentioned"],
-                     correctAnswer: "Yes"),
-    LiteracyQuestion(question: "What is the correct file extension for Python files?",
-                     options: [".py", ".python", ".pyt", ".code"], correctAnswer: ".py")
+    LiteracyQuestion(
+        question: "Which part of a sentence provides more information about the subject?",
+        options: ["Verb", "Object", "Predicate", "Clause"],
+        correctAnswer: "Predicate"
+    ),
+    LiteracyQuestion(
+        question: "What is the term for a word that modifies a noun?",
+        options: ["Adjective", "Verb", "Adverb", "Pronoun"],
+        correctAnswer: "Adjective"
+    ),
+    LiteracyQuestion(
+        question: "Identify the correct spelling of the word:",
+        options: ["Accomodate", "Acommodate", "Accommodate", "Acomodate"],
+        correctAnswer: "Accommodate"
+    ),
+    LiteracyQuestion(
+        question: "Which punctuation mark is used to indicate a strong pause or separation?",
+        options: ["Comma", "Dash", "Period", "Colon"],
+        correctAnswer: "Dash"
+    ),
+    LiteracyQuestion(
+        question: "What is the past tense of the verb 'run'?",
+        options: ["Ran", "Runned", "Running", "Raned"],
+        correctAnswer: "Ran"
+    )
+]
+var numeracyQuestions: [NumeracyQuestion] = [
+    NumeracyQuestion(
+        question: "What is 15% of 200?",
+        options: ["25", "30", "35", "40"],
+        correctAnswer: "30"
+    ),
+    NumeracyQuestion(
+        question: "Solve: 8 × (5 + 3)",
+        options: ["40", "56", "64", "48"],
+        correctAnswer: "64"
+    ),
+    NumeracyQuestion(
+        question: "What is the square root of 144?",
+        options: ["10", "11", "12", "14"],
+        correctAnswer: "12"
+    ),
+    NumeracyQuestion(
+        question: "Which of the following is a prime number?",
+        options: ["4", "9", "13", "15"],
+        correctAnswer: "13"
+    ),
+    NumeracyQuestion(
+        question: "Solve for x: 2x + 6 = 14",
+        options: ["2", "3", "4", "5"],
+        correctAnswer: "4"
+    )
 ]
 
 let transcript = TranscriptText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque viverra dui. Fusce non congue quam, pellentesque feugiat tellus. Suspendisse iaculis ligula erat, vitae aliquam dolor hendrerit ac. Suspendisse facilisis ac ipsum laoreet consectetur. Vestibulum diam magna, interdum in imperdiet eu, sodales sit amet nisl. Etiam lacus nisl, dictum nec nisi id, tempor posuere purus. Donec pulvinar vitae nibh id sollicitudin. Sed dui nisl, iaculis pharetra purus sed, ultricies porttitor justo. Nullam quis porta lectus. Phasellus non turpis commodo, finibus nisi vel, tempor velit. Praesent sodales urna sit amet mauris vestibulum blandit. Sed blandit, diam vel suscipit placerat, eros odio rhoncus orci, in vestibulum nisl ligula ac lectus.Nunc porttitor lacus in augue dignissim, a cursus lacus accumsan. Quisque eu nisi venenatis, blandit orci sit amet, dictum erat. Morbi quis ornare nunc. Fusce faucibus sapien non nibh semper convallis. Sed hendrerit malesuada aliquam. Cras vel libero quam. Aliquam sed mi non leo condimentum feugiat. Suspendisse nec convallis justo, sit amet porttitor ipsum. Praesent laoreet nisl ornare vulputate pharetra. Sed maximus ipsum sed justo eleifend, pharetra lacinia neque porta. Mauris nisl nunc, ultrices molestie elit ut, eleifend hendrerit est.Donec faucibus pharetra dui sed cursus. Pellentesque bibendum orci leo, in laoreet velit convallis a. Duis gravida sem eu consequat scelerisque. Sed egestas suscipit arcu vitae imperdiet. Cras tortor elit, imperdiet a consectetur eu, aliquet vitae justo. Vivamus ultrices leo nisi, quis euismod nunc suscipit et. Praesent pulvinar bibendum rutrum. Quisque maximus sollicitudin sapien non eleifend. Phasellus commodo purus tristique nibh ultrices accumsan. Vestibulum ultricies posuere aliquam. Proin ut risus porta, tempor ante a, dictum mauris. Pellentesque vel nisi at tortor suscipit dignissim vitae et ex. Ut accumsan dignissim arcu, eu sollicitudin quam pretium eu. Vestibulum eget scelerisque turpis. Cras sit amet nibh commodo, imperdiet velit vitae, dapibus nibh. In accumsan ligula in enim sollicitudin, at tempor turpis fringilla.")

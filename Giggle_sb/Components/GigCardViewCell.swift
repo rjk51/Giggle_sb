@@ -21,11 +21,11 @@ class GigCardViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Apply styling to the contain
+        // Apply styling to the container view
+        containerView.layer.borderWidth = 1
         containerView.layer.borderColor = CGColor(red: 0.647, green: 0.647, blue: 0.647, alpha: 1.0)
         containerView.layer.cornerRadius = 20
-        containerView.clipsToBounds = true
-//        containerView.layer.masksToBounds = false
+        containerView.layer.masksToBounds = false
 
         // Add shadow
         containerView.layer.shadowColor = CGColor(red: 0.373, green: 0.373, blue: 0.373, alpha: 0.6)

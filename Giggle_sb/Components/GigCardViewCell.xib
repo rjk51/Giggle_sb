@@ -126,7 +126,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="P70-eY-abq">
-                        <rect key="frame" x="286" y="34" width="27" height="34"/>
+                        <rect key="frame" x="293" y="37" width="27" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <state key="normal" title="Button"/>
@@ -161,6 +161,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
                 <outlet property="companyTileLabel" destination="hzE-lh-rZa" id="uXA-BK-6Lv"/>
                 <outlet property="containerView" destination="H2p-sc-9uM" id="nv1-7I-uYV"/>

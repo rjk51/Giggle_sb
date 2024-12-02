@@ -90,7 +90,8 @@ struct LiteracyQuestion {
 
 // MARK: - Numeracy Question
 struct NumeracyQuestion: Codable {
-    let id: String
-    let questionText: String
+    let question: String
+    let options: [String]
+    let correctAnswer: String
 }
 

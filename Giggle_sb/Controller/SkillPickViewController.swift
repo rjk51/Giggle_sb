@@ -27,10 +27,10 @@ class SkillPickViewController: UIViewController {
     }
     @IBAction func skillButtonTapped(_ sender: UIButton) {
         // Toggle button background color
-        if sender.tintColor == UIColor(red: 0.902, green: 0.224, blue: 0.275, alpha: 1){
+        if sender.tintColor == UIColor(red: 0.29, green: 0.306, blue: 0.412, alpha: 1){
             sender.tintColor = UIColor(red: 0.255, green: 0.255, blue: 0.255, alpha: 1)
         } else {
-            sender.tintColor = UIColor(red: 0.902, green: 0.224, blue: 0.275, alpha: 1)
+            sender.tintColor = UIColor(red: 0.29, green: 0.306, blue: 0.412, alpha: 1)
         }
     }
     

@@ -1,54 +1,24 @@
 //
-//  SearchViewController.swift
+//  AllGigsViewController.swift
 //  Giggle_sb
 //
-//  Created by rjk on 12/11/24.
+//  Created by rjk on 02/12/24.
 //
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class AllGigsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var jobTextField: UITextField!
-    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet var buttonCollection: [UIButton]!
-    
-    var filteredGigs: [Gig] = []
-
+    var gigs: [Gig] = sampleGigs
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "GigCardViewCell", bundle: nil), forCellReuseIdentifier: "GigCardViewCell")
-        
-        // Optionally, you can set up a target action for the text fields to perform the search
-        jobTextField.addTarget(self, action: #selector(searchGigs), for: .editingChanged)
-        locationTextField.addTarget(self, action: #selector(searchGigs), for: .editingChanged)
-        filterButton.tintColor = UIColor(red: 0.831, green: 0.286, blue: 0.298, alpha: 1)
-        //change color of buttom collection
-        let color = UIColor(red: 0.796, green: 0.788, blue: 0.831, alpha: 0.4)
-        buttonCollection.forEach { $0.tintColor = color }
+
+        // Do any additional setup after loading the view.
     }
-
-    @objc func searchGigs() {
-        // Get input from text fields
-        let jobInput = jobTextField.text?.lowercased() ?? ""
-        let locationInput = locationTextField.text?.lowercased() ?? ""
-
-        // Filter the sampleGigs array
-        filteredGigs = sampleGigs.filter { gig in
-            let matchesJob = gig.title.lowercased().contains(jobInput) || jobInput.isEmpty
-            let matchesLocation = gig.location.lowercased().contains(locationInput) || locationInput.isEmpty
-            return matchesJob && matchesLocation
-        }
-
-        // Reload the table view to display the filtered results
-        tableView.reloadData()
-    }
-    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 20
     }
@@ -65,7 +35,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return filteredGigs.count
+        return gigs.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,7 +43,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return UITableViewCell()
         }
 
-        let gig = filteredGigs[indexPath.section]
+        let gig = gigs[indexPath.section]
         cell.configure(with: gig)
         
         return cell
@@ -85,7 +55,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected at section \(indexPath.section)")
             
-        let gig = filteredGigs[indexPath.section]
+        let gig = gigs[indexPath.section]
         
         // Instantiate GigDetailsViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -96,6 +66,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             print("Could not instantiate GigDescriptionViewController")
         }
     }
+    
     
 
     /*

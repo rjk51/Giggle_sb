@@ -94,7 +94,15 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
             print("Could not instantiate GigDescriptionViewController")
         }
     }
-
+    @IBAction func seeAllButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let AllGigsVC = storyboard.instantiateViewController(withIdentifier: "AllGigsViewController") as? AllGigsViewController {
+            navigationController?.pushViewController(AllGigsVC, animated: true)
+        } else {
+            print("Could not instantiate GigDescriptionViewController")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

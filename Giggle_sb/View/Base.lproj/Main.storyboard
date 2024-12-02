@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a0j-Ki-ahy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="35V-mk-gRr">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -313,7 +313,7 @@
                                     <action selector="loginPressed:" destination="BqJ-2e-ZGV" eventType="touchUpInside" id="key-HJ-2ze"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2A-6C-6ks">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2A-6C-6ks">
                                 <rect key="frame" x="20" y="344.33333333333331" width="362" height="45"/>
                                 <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -322,7 +322,7 @@
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1F5-rb-KAY">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1F5-rb-KAY">
                                 <rect key="frame" x="20" y="283.33333333333331" width="362" height="45"/>
                                 <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -874,7 +874,7 @@ your current city or nearby cities.</string>
                                 <rect key="frame" x="0.0" y="44" width="402" height="830"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4y4-d1-wCf">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="830"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1120.6666666666667"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Google inc" translatesAutoresizingMaskIntoConstraints="NO" id="J8L-Kz-mkC">
                                                 <rect key="frame" x="20" y="71.666666666666686" width="362" height="197"/>
@@ -946,9 +946,12 @@ your current city or nearby cities.</string>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-Rl-blI">
-                                                <rect key="frame" x="20" y="320.66666666666674" width="362" height="509.33333333333326"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-Rl-blI">
+                                                <rect key="frame" x="20" y="320.66666666666674" width="362" height="800"/>
                                                 <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="800" id="YAq-Ux-Q89"/>
+                                                </constraints>
                                                 <color key="sectionIndexBackgroundColor" red="0.12549019607843137" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="GigCardCell" rowHeight="227" id="tBb-Xb-nHj" customClass="GigCardCell" customModule="Giggle_sb" customModuleProvider="target">
@@ -1121,6 +1124,9 @@ your current city or nearby cities.</string>
                                                 <rect key="frame" x="305" y="276.66666666666669" width="77" height="35"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                                                <connections>
+                                                    <action selector="seeAllButtonTapped:" destination="Pnc-1i-08Q" eventType="touchUpInside" id="qqI-Hc-8GV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1154,11 +1160,9 @@ your current city or nearby cities.</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="4y4-d1-wCf" secondAttribute="trailing" id="U72-BP-5VD"/>
-                                    <constraint firstAttribute="bottom" secondItem="4y4-d1-wCf" secondAttribute="bottom" id="Vyg-AO-0lv"/>
-                                    <constraint firstItem="4y4-d1-wCf" firstAttribute="centerX" secondItem="6AJ-my-Grq" secondAttribute="centerX" id="WFg-M7-7jU"/>
+                                    <constraint firstAttribute="bottom" secondItem="4y4-d1-wCf" secondAttribute="bottom" id="fgd-s0-bK1"/>
                                     <constraint firstItem="4y4-d1-wCf" firstAttribute="top" secondItem="6AJ-my-Grq" secondAttribute="top" id="gsq-Sh-shb"/>
                                     <constraint firstItem="4y4-d1-wCf" firstAttribute="leading" secondItem="6AJ-my-Grq" secondAttribute="leading" id="mBU-9c-TeX"/>
-                                    <constraint firstItem="4y4-d1-wCf" firstAttribute="centerY" secondItem="6AJ-my-Grq" secondAttribute="centerY" id="th1-dS-1Ip"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -1172,6 +1176,7 @@ your current city or nearby cities.</string>
                             <constraint firstItem="6AJ-my-Grq" firstAttribute="bottom" secondItem="gIb-iP-UBY" secondAttribute="bottom" id="Jij-iu-vUO"/>
                             <constraint firstItem="6AJ-my-Grq" firstAttribute="bottom" secondItem="gIb-iP-UBY" secondAttribute="bottom" id="NVN-If-q2d"/>
                             <constraint firstItem="6AJ-my-Grq" firstAttribute="trailing" secondItem="gIb-iP-UBY" secondAttribute="trailing" id="aei-No-fXa"/>
+                            <constraint firstItem="4y4-d1-wCf" firstAttribute="width" secondItem="nSc-43-iJs" secondAttribute="width" id="jUl-15-sl1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rh9-6X-6iW"/>
@@ -1179,7 +1184,7 @@ your current city or nearby cities.</string>
                         <outlet property="flnTestButton" destination="wa3-LC-oK2" id="BIg-fB-2Sk"/>
                         <outlet property="gigsTableView" destination="LIc-Rl-blI" id="lD5-d5-0dI"/>
                         <outlet property="nameLabel" destination="jzC-vw-zcn" id="Z9i-ee-Gu5"/>
-                        <outlet property="seeAllButton" destination="aE4-jO-rtt" id="bKj-cx-EgJ"/>
+                        <outlet property="seeAllButton" destination="aE4-jO-rtt" id="Sgi-Bk-GNh"/>
                         <outlet property="userProfile" destination="fCX-t7-JcP" id="oC8-Yf-9kF"/>
                     </connections>
                 </viewController>
@@ -1726,37 +1731,34 @@ your current city or nearby cities.</string>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RO-8E-Dan">
-                                <rect key="frame" x="83" y="202" width="93" height="40"/>
+                                <rect key="frame" x="83" y="202" width="92.333333333333314" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T2j-Mr-abz"/>
                                 </constraints>
                                 <color key="tintColor" red="0.79607843137254897" green="0.78823529411764703" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Designer">
-                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Designer">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="filled" title="Designer"/>
                             </button>
                             <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKZ-Wy-T9e">
-                                <rect key="frame" x="187" y="202" width="91" height="40"/>
+                                <rect key="frame" x="186.33333333333334" y="202" width="91.000000000000028" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="T2q-IX-wkN"/>
                                 </constraints>
                                 <color key="tintColor" red="0.79607843137254897" green="0.78823529411764703" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Full-time">
-                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="filled" title="Full-time"/>
                             </button>
                             <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7q-Cv-ITP">
-                                <rect key="frame" x="290" y="202" width="96" height="40"/>
+                                <rect key="frame" x="289.33333333333331" y="202" width="96" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8p4-nQ-qfR"/>
                                 </constraints>
                                 <color key="tintColor" red="0.79607843137254897" green="0.78823529411764703" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Part-time">
-                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="filled" title="Part-time"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ep-gW-s2N"/>
@@ -2332,6 +2334,49 @@ your current city or nearby cities.</string>
             </objects>
             <point key="canvasLocation" x="5802.9850746268658" y="2.7459954233409607"/>
         </scene>
+        <!--All Gigs View Controller-->
+        <scene sceneID="94G-qN-2Te">
+            <objects>
+                <viewController storyboardIdentifier="AllGigsViewController" id="tmI-Y7-jqf" customClass="AllGigsViewController" customModule="Giggle_sb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="afX-il-O7p">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BGP-ou-oIC">
+                                <rect key="frame" x="25" y="62" width="352" height="778"/>
+                                <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="GigCardViewCell" rowHeight="227" id="qNP-zL-5B5" customClass="GigCardViewCell" customModule="Giggle_sb" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="352" height="227"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qNP-zL-5B5" id="8mk-3a-1sZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="352" height="227"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rUJ-DR-H8N"/>
+                        <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="BGP-ou-oIC" firstAttribute="leading" secondItem="rUJ-DR-H8N" secondAttribute="leading" constant="25" id="DgG-RB-eBd"/>
+                            <constraint firstItem="rUJ-DR-H8N" firstAttribute="bottom" secondItem="BGP-ou-oIC" secondAttribute="bottom" id="KJb-r3-vCp"/>
+                            <constraint firstItem="BGP-ou-oIC" firstAttribute="top" secondItem="rUJ-DR-H8N" secondAttribute="top" id="Plz-8B-6ib"/>
+                            <constraint firstItem="rUJ-DR-H8N" firstAttribute="trailing" secondItem="BGP-ou-oIC" secondAttribute="trailing" constant="25" id="Sn2-bz-QEB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="BGP-ou-oIC" id="khs-m2-RTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzo-q4-wEa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.85074626865662" y="1088.787185354691"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="tEZ-d2-f0T">
             <objects>
@@ -2340,6 +2385,10 @@ your current city or nearby cities.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pEx-3w-4Ex">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2639,6 +2688,7 @@ your current city or nearby cities.</string>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button" cornerStyle="large">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="optionTapped:" destination="XQQ-SU-ctP" eventType="touchUpInside" id="QeQ-G5-YB8"/>
@@ -3456,8 +3506,9 @@ your current city or nearby cities.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="w6B-G8-6PT"/>
         <segue reference="q7d-zg-sZt"/>
-        <segue reference="b2I-dQ-mNW"/>
+        <segue reference="rEg-hC-wqE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="A true Giggler!!" width="1951" height="385"/>
