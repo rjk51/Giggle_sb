@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="35V-mk-gRr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a0j-Ki-ahy">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -874,10 +874,10 @@ your current city or nearby cities.</string>
                                 <rect key="frame" x="0.0" y="44" width="402" height="830"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4y4-d1-wCf">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1120.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1837.6666666666667"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Google inc" translatesAutoresizingMaskIntoConstraints="NO" id="J8L-Kz-mkC">
-                                                <rect key="frame" x="20" y="71.666666666666686" width="362" height="197"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="J8L-Kz-mkC">
+                                                <rect key="frame" x="0.0" y="55.666666666666686" width="402" height="237"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dJ-fa-Ekr">
                                                 <rect key="frame" x="20" y="0.0" width="63" height="31.666666666666668"/>
@@ -931,7 +931,7 @@ your current city or nearby cities.</string>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="163" id="zSJ-jS-1bq"/>
                                                 </constraints>
-                                                <color key="tintColor" red="0.90196078430000004" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.83137255909999996" green="0.28627452250000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="NEXT">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
@@ -941,16 +941,16 @@ your current city or nearby cities.</string>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5f-y2-GYx">
-                                                <rect key="frame" x="20" y="282.66666666666669" width="172" height="24"/>
+                                                <rect key="frame" x="20" y="299.66666666666669" width="172" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-Rl-blI">
-                                                <rect key="frame" x="20" y="320.66666666666674" width="362" height="800"/>
+                                                <rect key="frame" x="20" y="337.66666666666674" width="362" height="1500"/>
                                                 <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="800" id="YAq-Ux-Q89"/>
+                                                    <constraint firstAttribute="height" constant="1500" id="YAq-Ux-Q89"/>
                                                 </constraints>
                                                 <color key="sectionIndexBackgroundColor" red="0.12549019607843137" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <prototypes>
@@ -1121,7 +1121,7 @@ your current city or nearby cities.</string>
                                                 </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE4-jO-rtt">
-                                                <rect key="frame" x="305" y="276.66666666666669" width="77" height="35"/>
+                                                <rect key="frame" x="305" y="293.66666666666669" width="77" height="35"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="See All"/>
                                                 <connections>
@@ -1136,23 +1136,23 @@ your current city or nearby cities.</string>
                                             <constraint firstAttribute="trailing" secondItem="fCX-t7-JcP" secondAttribute="trailing" constant="20" id="2e6-62-LIg"/>
                                             <constraint firstAttribute="bottom" secondItem="LIc-Rl-blI" secondAttribute="bottom" id="5w5-74-8ur"/>
                                             <constraint firstItem="wa3-LC-oK2" firstAttribute="top" secondItem="Qcr-os-y3m" secondAttribute="bottom" constant="19" id="69b-ER-XJ1"/>
-                                            <constraint firstItem="W5f-y2-GYx" firstAttribute="top" secondItem="J8L-Kz-mkC" secondAttribute="bottom" constant="14" id="7NA-Sk-Oat"/>
                                             <constraint firstItem="fCX-t7-JcP" firstAttribute="top" secondItem="4y4-d1-wCf" secondAttribute="top" constant="5" id="8op-Iy-Vgs"/>
                                             <constraint firstItem="J8L-Kz-mkC" firstAttribute="centerX" secondItem="4y4-d1-wCf" secondAttribute="centerX" id="Iht-vk-DDC"/>
                                             <constraint firstItem="jzC-vw-zcn" firstAttribute="leading" secondItem="4y4-d1-wCf" secondAttribute="leading" constant="20" id="J8R-KK-PU6"/>
-                                            <constraint firstItem="aE4-jO-rtt" firstAttribute="top" secondItem="J8L-Kz-mkC" secondAttribute="bottom" constant="8" id="JPt-Iw-NDY"/>
+                                            <constraint firstItem="aE4-jO-rtt" firstAttribute="top" secondItem="J8L-Kz-mkC" secondAttribute="bottom" constant="1" id="JPt-Iw-NDY"/>
                                             <constraint firstItem="wa3-LC-oK2" firstAttribute="centerX" secondItem="4y4-d1-wCf" secondAttribute="centerX" id="NTR-db-h2A"/>
-                                            <constraint firstItem="J8L-Kz-mkC" firstAttribute="leading" secondItem="4y4-d1-wCf" secondAttribute="leading" constant="20" id="PyS-Az-xnR"/>
+                                            <constraint firstItem="J8L-Kz-mkC" firstAttribute="leading" secondItem="4y4-d1-wCf" secondAttribute="leading" id="PyS-Az-xnR"/>
                                             <constraint firstItem="2dJ-fa-Ekr" firstAttribute="leading" secondItem="4y4-d1-wCf" secondAttribute="leading" constant="20" id="ahd-QA-NkB"/>
                                             <constraint firstItem="LIc-Rl-blI" firstAttribute="leading" secondItem="4y4-d1-wCf" secondAttribute="leading" constant="20" id="dh6-vV-ppK"/>
                                             <constraint firstItem="2dJ-fa-Ekr" firstAttribute="top" secondItem="4y4-d1-wCf" secondAttribute="top" id="eYx-6a-nFr"/>
                                             <constraint firstItem="W5f-y2-GYx" firstAttribute="leading" secondItem="4y4-d1-wCf" secondAttribute="leading" constant="20" id="hnE-XT-Qdl"/>
+                                            <constraint firstItem="W5f-y2-GYx" firstAttribute="top" secondItem="J8L-Kz-mkC" secondAttribute="bottom" constant="7" id="iO9-S7-8vE"/>
                                             <constraint firstItem="jzC-vw-zcn" firstAttribute="top" secondItem="2dJ-fa-Ekr" secondAttribute="bottom" constant="2" id="ksR-He-Kcj"/>
                                             <constraint firstAttribute="trailing" secondItem="LIc-Rl-blI" secondAttribute="trailing" constant="20" id="l93-ZA-huR"/>
                                             <constraint firstItem="soo-Rc-jr4" firstAttribute="centerX" secondItem="4y4-d1-wCf" secondAttribute="centerX" id="lMN-Ra-PFC"/>
-                                            <constraint firstAttribute="trailing" secondItem="J8L-Kz-mkC" secondAttribute="trailing" constant="20" id="lPW-UO-7xT"/>
+                                            <constraint firstAttribute="trailing" secondItem="J8L-Kz-mkC" secondAttribute="trailing" id="lPW-UO-7xT"/>
                                             <constraint firstItem="LIc-Rl-blI" firstAttribute="top" secondItem="W5f-y2-GYx" secondAttribute="bottom" constant="14" id="lsd-Y7-k9K"/>
-                                            <constraint firstItem="J8L-Kz-mkC" firstAttribute="top" secondItem="jzC-vw-zcn" secondAttribute="bottom" constant="38" id="n6n-U1-xDY"/>
+                                            <constraint firstItem="J8L-Kz-mkC" firstAttribute="top" secondItem="jzC-vw-zcn" secondAttribute="bottom" constant="22" id="n6n-U1-xDY"/>
                                             <constraint firstAttribute="trailing" secondItem="aE4-jO-rtt" secondAttribute="trailing" constant="20" id="pCh-Td-d3i"/>
                                             <constraint firstItem="soo-Rc-jr4" firstAttribute="top" secondItem="jzC-vw-zcn" secondAttribute="bottom" constant="66.329999999999998" id="tiU-Mc-Cb0"/>
                                         </constraints>
@@ -1185,6 +1185,8 @@ your current city or nearby cities.</string>
                         <outlet property="gigsTableView" destination="LIc-Rl-blI" id="lD5-d5-0dI"/>
                         <outlet property="nameLabel" destination="jzC-vw-zcn" id="Z9i-ee-Gu5"/>
                         <outlet property="seeAllButton" destination="aE4-jO-rtt" id="Sgi-Bk-GNh"/>
+                        <outlet property="tableView" destination="LIc-Rl-blI" id="w0m-SZ-7LB"/>
+                        <outlet property="tableViewHeightConstraint" destination="YAq-Ux-Q89" id="Zto-Uf-rEL"/>
                         <outlet property="userProfile" destination="fCX-t7-JcP" id="oC8-Yf-9kF"/>
                     </connections>
                 </viewController>
@@ -1204,7 +1206,7 @@ your current city or nearby cities.</string>
                                 <rect key="frame" x="0.0" y="62" width="402" height="727"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxO-Te-ikS" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcr-k6-4KL">
                                                 <rect key="frame" x="0.0" y="86" width="402" height="135"/>
@@ -1540,7 +1542,7 @@ your current city or nearby cities.</string>
                                         <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="WLF-RN-0du" firstAttribute="top" secondItem="hCj-p3-upF" secondAttribute="bottom" constant="10" id="0ji-cg-mQQ"/>
-                                            <constraint firstAttribute="height" constant="1800" id="5ai-ta-vTv"/>
+                                            <constraint firstAttribute="height" constant="1700" id="5ai-ta-vTv"/>
                                             <constraint firstItem="Ooh-Iq-T70" firstAttribute="leading" secondItem="LxO-Te-ikS" secondAttribute="leading" constant="26" id="5be-Fl-QqL"/>
                                             <constraint firstItem="H93-cQ-Xn0" firstAttribute="leading" secondItem="LxO-Te-ikS" secondAttribute="leading" constant="26" id="6pE-SC-nzK"/>
                                             <constraint firstItem="KmB-Af-pFI" firstAttribute="leading" secondItem="LxO-Te-ikS" secondAttribute="leading" constant="26" id="7y8-kS-vWG"/>
@@ -1656,9 +1658,12 @@ your current city or nearby cities.</string>
                         <outlet property="addressLabel" destination="hCj-p3-upF" id="5ST-Nd-VAP"/>
                         <outlet property="addressMap" destination="WLF-RN-0du" id="1Qy-jq-Isv"/>
                         <outlet property="companyNameLabel" destination="wdA-VO-Duh" id="xu9-J3-Nwa"/>
+                        <outlet property="containerConstraint" destination="5ai-ta-vTv" id="Djl-Wq-EKQ"/>
+                        <outlet property="containerView" destination="LxO-Te-ikS" id="byf-nD-AW0"/>
                         <outlet property="experienceInfoLabel" destination="tMh-w8-3iP" id="csy-St-wmr"/>
                         <outlet property="experienceLabel" destination="tMh-w8-3iP" id="Lrg-JB-NSb"/>
-                        <outlet property="facilityTableView" destination="WJd-gM-QSH" id="Iz0-Nb-ewp"/>
+                        <outlet property="facilityConstraint" destination="4EA-ea-M3B" id="tNn-M0-p2b"/>
+                        <outlet property="facilityTableView" destination="WJd-gM-QSH" id="0cb-gB-gvt"/>
                         <outlet property="gigAvatarImageView" destination="MRv-Lh-zKW" id="Gna-gx-va4"/>
                         <outlet property="gigDescriptionLabel" destination="VNK-Vl-8Zd" id="b15-N6-rUg"/>
                         <outlet property="gigTitleLabel" destination="1SI-Sl-bOW" id="g1x-AT-gyD"/>
@@ -1669,6 +1674,7 @@ your current city or nearby cities.</string>
                         <outlet property="positionLabel" destination="BR7-pW-T7P" id="IWw-Vy-4nO"/>
                         <outlet property="postedAtLabel" destination="6UZ-ZG-QQr" id="dIO-h3-m0Z"/>
                         <outlet property="qualificationLabel" destination="A8G-u4-9zz" id="jqt-l3-MDL"/>
+                        <outlet property="requirementsConstraint" destination="U4g-Fp-KaY" id="dKH-yp-SLq"/>
                         <outlet property="requirementsTabelView" destination="gES-UV-JAl" id="91s-8v-w7a"/>
                         <outlet property="salaryInfoLabel" destination="MqE-UI-mj4" id="Mdm-Xq-Jxx"/>
                         <outlet property="salaryLabel" destination="MqE-UI-mj4" id="Qaa-8q-I5p"/>
@@ -2387,7 +2393,7 @@ your current city or nearby cities.</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3156,7 +3162,7 @@ your current city or nearby cities.</string>
                                 <rect key="frame" x="0.0" y="44" width="402" height="830"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNE-u9-8RR">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="830"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="1800"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP3-as-XV6">
                                                 <rect key="frame" x="20" y="0.0" width="63" height="31.666666666666668"/>
@@ -3181,14 +3187,17 @@ your current city or nearby cities.</string>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHy-V9-uhD">
-                                                <rect key="frame" x="20" y="282" width="172" height="24"/>
+                                                <rect key="frame" x="20" y="262" width="172" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mFW-Kv-osd">
-                                                <rect key="frame" x="20" y="320" width="362" height="510"/>
+                                                <rect key="frame" x="20" y="300" width="362" height="1500"/>
                                                 <color key="backgroundColor" red="0.12549020350000001" green="0.1215686351" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1500" id="p3U-wP-oi1"/>
+                                                </constraints>
                                                 <color key="sectionIndexBackgroundColor" red="0.12549019610000001" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="GigCardCell" rowHeight="227" id="9zV-1f-7YI" customClass="GigCardCell" customModule="Giggle_sb" customModuleProvider="target">
@@ -3358,12 +3367,15 @@ your current city or nearby cities.</string>
                                                 </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUX-NT-blD">
-                                                <rect key="frame" x="305" y="276.66666666666669" width="77" height="35"/>
+                                                <rect key="frame" x="305" y="256.66666666666669" width="77" height="35"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                                                <connections>
+                                                    <action selector="seeAllButtonTapped:" destination="6Re-tZ-uhC" eventType="touchUpInside" id="UpV-0a-8ZA"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHo-dA-ItO">
-                                                <rect key="frame" x="20" y="121" width="362" height="137"/>
+                                                <rect key="frame" x="20" y="101" width="362" height="137"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your FLN Grade:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCT-xO-3Ux">
                                                         <rect key="frame" x="22" y="18" width="153" height="24"/>
@@ -3443,7 +3455,7 @@ your current city or nearby cities.</string>
                                             <constraint firstAttribute="bottom" secondItem="mFW-Kv-osd" secondAttribute="bottom" id="emk-nI-tvx"/>
                                             <constraint firstItem="bHo-dA-ItO" firstAttribute="leading" secondItem="WNE-u9-8RR" secondAttribute="leading" constant="20" id="nlm-cM-Faq"/>
                                             <constraint firstItem="mFW-Kv-osd" firstAttribute="top" secondItem="BHy-V9-uhD" secondAttribute="bottom" constant="14" id="obo-bi-bep"/>
-                                            <constraint firstItem="bHo-dA-ItO" firstAttribute="top" secondItem="czk-EJ-fnv" secondAttribute="bottom" constant="66" id="ppv-rm-uBG"/>
+                                            <constraint firstItem="bHo-dA-ItO" firstAttribute="top" secondItem="czk-EJ-fnv" secondAttribute="bottom" constant="46" id="ppv-rm-uBG"/>
                                             <constraint firstItem="0mX-rv-hAf" firstAttribute="leading" secondItem="WNE-u9-8RR" secondAttribute="leading" constant="20" id="vE8-Eu-N6o"/>
                                             <constraint firstAttribute="trailing" secondItem="MUX-NT-blD" secondAttribute="trailing" constant="20" id="vxG-sh-uOU"/>
                                             <constraint firstAttribute="trailing" secondItem="mFW-Kv-osd" secondAttribute="trailing" constant="20" id="yqy-eI-Mhk"/>
@@ -3452,8 +3464,7 @@ your current city or nearby cities.</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="WNE-u9-8RR" secondAttribute="trailing" id="3Wq-FH-OrD"/>
-                                    <constraint firstItem="WNE-u9-8RR" firstAttribute="centerX" secondItem="NPc-Rr-kjp" secondAttribute="centerX" id="4q5-ct-9ce"/>
-                                    <constraint firstItem="WNE-u9-8RR" firstAttribute="centerY" secondItem="NPc-Rr-kjp" secondAttribute="centerY" id="aEh-Rb-lEf"/>
+                                    <constraint firstItem="WNE-u9-8RR" firstAttribute="width" secondItem="NPc-Rr-kjp" secondAttribute="width" id="Bwh-G3-FXg"/>
                                     <constraint firstItem="WNE-u9-8RR" firstAttribute="top" secondItem="NPc-Rr-kjp" secondAttribute="top" id="g9g-1U-rFK"/>
                                     <constraint firstAttribute="bottom" secondItem="WNE-u9-8RR" secondAttribute="bottom" id="na2-Vt-QLl"/>
                                     <constraint firstItem="WNE-u9-8RR" firstAttribute="leading" secondItem="NPc-Rr-kjp" secondAttribute="leading" id="wFh-ge-IOv"/>
@@ -3479,6 +3490,9 @@ your current city or nearby cities.</string>
                         <outlet property="nameLabel" destination="0mX-rv-hAf" id="eXX-ky-nPM"/>
                         <outlet property="scoreButton" destination="aB7-5T-0ZP" id="nNr-BE-8A3"/>
                         <outlet property="scoreLabel" destination="Ajs-jh-Ixi" id="KkL-kx-gtd"/>
+                        <outlet property="seeAllButton" destination="MUX-NT-blD" id="hNI-9Y-2aY"/>
+                        <outlet property="tableView" destination="mFW-Kv-osd" id="qoY-PE-vha"/>
+                        <outlet property="tableViewHeightConstraint" destination="p3U-wP-oi1" id="0Xo-uH-Sq6"/>
                         <outlet property="userProfile" destination="czk-EJ-fnv" id="CT1-hi-O5q"/>
                     </connections>
                 </viewController>
@@ -3514,7 +3528,6 @@ your current city or nearby cities.</string>
         <image name="A true Giggler!!" width="1951" height="385"/>
         <image name="Frame 99245773" width="262" height="220"/>
         <image name="Frame 99245790" width="262" height="220"/>
-        <image name="Google inc" width="375" height="197"/>
         <image name="Profile Avatar" width="113" height="113"/>
         <image name="apple" width="81" height="75"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
@@ -3529,6 +3542,7 @@ your current city or nearby cities.</string>
         <image name="medal.fill" catalog="system" width="121" height="128"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="questionmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="score" width="375" height="237"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="110"/>
         <image name="text.badge.checkmark" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">

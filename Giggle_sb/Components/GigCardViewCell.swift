@@ -43,8 +43,8 @@ class GigCardViewCell: UITableViewCell {
         gigTitleLabel.text = gig.title
         gigLocationLabel.text = gig.location
         gigExperienceLabel.text = gig.experience
-        gigTypeLabel.text = gig.duration
-        gigSalaryLabel.text = "$\(gig.salary)"
+        gigTypeLabel.text = gig.approximity
+        gigSalaryLabel.text = "₹\(gig.salary)"
         gigAvatar.image = UIImage(named: gig.gigAvatar)
         gigAvatar.layer.cornerRadius = gigAvatar.frame.width / 2
         gigAvatar.clipsToBounds = true

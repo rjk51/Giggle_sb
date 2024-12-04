@@ -30,8 +30,12 @@ class GigDescriptionViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var specLabel: UILabel!
     @IBOutlet weak var salaryInfoLabel: UILabel!
     @IBOutlet weak var facilityTableView: UITableView!
+    @IBOutlet weak var facilityConstraint: NSLayoutConstraint!
     @IBOutlet weak var point1: UIView!
     @IBOutlet weak var point2: UIView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var requirementsConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerConstraint: NSLayoutConstraint!
     
     // Property to hold the gig data passed from HomeScreenViewController
     var gig: Gig?
@@ -57,16 +61,19 @@ class GigDescriptionViewController: UIViewController, UITableViewDataSource, UIT
             gigAvatarImageView.layer.cornerRadius = gigAvatarImageView.frame.width / 2
             gigDescriptionLabel.text = gig.description
             qualificationLabel.text = gig.qualification
-            jobTypeLabel.text = gig.duration
+            jobTypeLabel.text = gig.approximity
             specLabel.text = gig.specialization
             salaryInfoLabel.text = gig.salary.isZero ? "Not Available" : "$\(gig.salary)"
             experienceInfoLabel.text = gig.experience
             positionLabel.text = gig.title
             addressLabel.text = gig.location
             postedAtLabel.text = relativeDateString(from: gig.postedAt)
+            requirementsTabelView.layoutIfNeeded()
+            requirementsConstraint.constant = requirementsTabelView.contentSize.height
+            facilityTableView.layoutIfNeeded()
+            facilityConstraint.constant = facilityTableView.contentSize.height
         }
     }
-    
     // Function to calculate relative date string
     func relativeDateString(from date: Date) -> String {
         let calendar = Calendar.current

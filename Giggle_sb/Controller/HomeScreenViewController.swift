@@ -14,6 +14,8 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var gigsTableView: UITableView!
     @IBOutlet weak var seeAllButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     var gigs: [Gig] = sampleGigs
     
@@ -39,8 +41,12 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         userProfile.layer.cornerRadius = userProfile.frame.width / 2
         userProfile.clipsToBounds = true
         // Do any additional setup after loading the view.
+        updateTableViewHeight()
     }
-    
+    func updateTableViewHeight() {
+        tableView.layoutIfNeeded()
+        tableViewHeightConstraint.constant = tableView.contentSize.height
+    }
     @IBAction func goToFln(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" if your storyboard name is different
         if let skillPickVC = storyboard.instantiateViewController(withIdentifier: "SkillPickViewController") as? SkillPickViewController {

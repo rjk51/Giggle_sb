@@ -16,6 +16,8 @@ class HomeScreenNewViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var flnView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
     var gigs: [Gig] = sampleGigs
     
@@ -51,8 +53,12 @@ class HomeScreenNewViewController: UIViewController, UITableViewDataSource, UITa
         userProfile.layer.cornerRadius = userProfile.frame.width / 2
         userProfile.clipsToBounds = true
         // Do any additional setup after loading the view.
+        updateTableViewHeight()
     }
-    
+    func updateTableViewHeight() {
+        tableView.layoutIfNeeded()
+        tableViewHeightConstraint.constant = tableView.contentSize.height
+    }
     @IBAction func scoreButtonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" if your storyboard name is different
         if let scoreVC = storyboard.instantiateViewController(withIdentifier: "ScoreViewController") as? ScoreViewController {
@@ -102,6 +108,14 @@ class HomeScreenNewViewController: UIViewController, UITableViewDataSource, UITa
         if let gigDetailsVC = storyboard.instantiateViewController(withIdentifier: "GigDescriptionViewController") as? GigDescriptionViewController {
             gigDetailsVC.gig = gig
             navigationController?.pushViewController(gigDetailsVC, animated: true)
+        } else {
+            print("Could not instantiate GigDescriptionViewController")
+        }
+    }
+    @IBAction func seeAllButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let AllGigsVC = storyboard.instantiateViewController(withIdentifier: "AllGigsViewController") as? AllGigsViewController {
+            navigationController?.pushViewController(AllGigsVC, animated: true)
         } else {
             print("Could not instantiate GigDescriptionViewController")
         }
